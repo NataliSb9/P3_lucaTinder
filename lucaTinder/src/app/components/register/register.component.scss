@@ -1,53 +1,60 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 .fondo-login {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    display: flex;
-    font-family: sans-serif;
-    background: linear-gradient(to right, $color-blue-indigo, $color-pink-dark)
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  font-family: sans-serif;
+  background: linear-gradient(to right, $color-blue-indigo, $color-pink-dark);
 }
 
 .card {
-    border: none;
-    border-radius: 14px;
-    background: #191919;
+  border: none;
+  border-radius: 14px;
+  background: #191919;
 }
 
 .box {
-    border-radius: 10px;
+  border-radius: 10px;
+  // width: 500px;
+  padding: 40px;
+  background: #191919;
+  text-align: center;
+  transition: 0.25s;
+}
+
+@media only screen and (min-width: 768px) {
+  .box {
     width: 500px;
     padding: 40px;
-    background: #191919;
-    text-align: center;
-    transition: 0.25s;
+  }
 }
 
 .box h1 {
-    color: $color-pink-dark;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-shadow: 1px 1px 1px $color-blue-indigo;
+  color: $color-pink-dark;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px $color-blue-indigo;
 }
 
-
-.divider{
-    margin-left: 8px;
-    margin-right: 8px;
+.divider {
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.logo{
-    height: 150px;
+.logo {
+  height: 150px;
 }
 
-.register-soy, .register-busco {
+.register-soy,
+.register-busco {
   margin: 20px auto;
   padding: 0 100px;
 }
@@ -58,73 +65,73 @@ a{
 *,
 *:after,
 *:before {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 $primary-color: #00005c; // Change color here. C'mon, try it!
 $text-color: mix(#000, $primary-color, 64%);
 
 body {
-	font-family: "Inter", sans-serif;
-	color: $text-color;
-	font-size: calc(1em + 1.25vw);
-	background-color: mix(#fff, $primary-color, 90%);
+  font-family: "Inter", sans-serif;
+  color: $text-color;
+  font-size: calc(1em + 1.25vw);
+  background-color: mix(#fff, $primary-color, 90%);
 }
 
 form {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .radio-label {
-	display: flex;
-	cursor: pointer;
-	font-weight: 500;
-	position: relative;
-	overflow: hidden;
-	margin-bottom: 0.375em;
-	/* Accessible outline */
-	/* Remove comment to use */
-	/*
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+  /* Accessible outline */
+  /* Remove comment to use */
+  /*
 		&:focus-within {
 				outline: .125em solid $primary-color;
 		}
 	*/
-	.radio-input {
-		position: absolute;
-		left: -9999px;
-		&:checked + span {
-			background-color: mix(rgb(255, 0, 0), $primary-color, 84%);
+  .radio-input {
+    position: absolute;
+    left: -9999px;
+    &:checked + span {
+      background-color: mix(rgb(255, 0, 0), $primary-color, 84%);
       color: white;
-			&:before {
-				box-shadow: inset 0 0 0 0.4375em $color-blue-indigo;
-			}
-		}
-	}
-	.radio-span {
-		display: flex;
-		align-items: center;
-		padding: 0.375em 0.75em 0.375em 0.375em;
-		border-radius: 99em; // or something higher...
-		transition: 0.25s ease;
+      &:before {
+        box-shadow: inset 0 0 0 0.4375em $color-blue-indigo;
+      }
+    }
+  }
+  .radio-span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em; // or something higher...
+    transition: 0.25s ease;
     color: $color-pink-light;
-		&:hover {
-			background-color: mix(#fff, $color-pink-dark, 84%);
-		}
-		&:before {
-			display: flex;
-			flex-shrink: 0;
-			content: "";
-			background-color: #fff;
-			width: 1.5em;
-			height: 1.5em;
-			border-radius: 50%;
-			margin-right: 0.375em;
-			transition: 0.25s ease;
-			box-shadow: inset 0 0 0 0.125em $primary-color;
-		}
-	}
+    &:hover {
+      background-color: mix(#fff, $color-pink-dark, 84%);
+    }
+    &:before {
+      display: flex;
+      flex-shrink: 0;
+      content: "";
+      background-color: #fff;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      margin-right: 0.375em;
+      transition: 0.25s ease;
+      box-shadow: inset 0 0 0 0.125em $primary-color;
+    }
+  }
 }
 
 // Codepen spesific styling - only to center the elements in the pen preview and viewport
@@ -137,34 +144,34 @@ form {
 }
 
 .check-label {
-	cursor: pointer;
-	user-select: none;
-	display: block;
+  cursor: pointer;
+  user-select: none;
+  display: block;
 
-	.check-span {
-		position: relative;
-		border: 1px solid #d4d4d4;
-		border-radius: 10px;
-		transition: 0.4s;
-		padding: 0 15px;
-		height: 46px;
-		color: #e9e9e9;
-		display: flex;
-		align-items: center;
-		column-gap: 7px;
+  .check-span {
+    position: relative;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+    transition: 0.4s;
+    padding: 0 15px;
+    height: 46px;
+    color: #e9e9e9;
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
 
-		.icon {
-			font-size: 1.1em;
-		}
-	}
+    .icon {
+      font-size: 1.1em;
+    }
+  }
 
-	.check-input {
-		pointer-events: none;
-		display: none;
+  .check-input {
+    pointer-events: none;
+    display: none;
 
-		&:checked + span {
-			border-color: #f33d3d;
-			color: #f33d3d;
-		}
-	}
+    &:checked + span {
+      border-color: #f33d3d;
+      color: #f33d3d;
+    }
+  }
 }

@@ -11,34 +11,57 @@
       <p class="text-muted">¡Únete a los come roscas!</p>
 
       <input class="btn-tin" placeholder="Nombre" #user type="text" />
-      <input class="btn-tin" placeholder="Email" #user type="email" />
+      <input class="btn-tin" placeholder="Email" #email type="email" />
       <input class="btn-tin" placeholder="Contraseña" #pass type="password" />
-      <input class="btn-tin" placeholder="Edad" #pass type="number" />
+      <input class="btn-tin" placeholder="Edad" #edad type="number" />
 
       <hr class="red-hr" />
 
       <div class="register-soy d-flex flex-column">
         <h2 class="text-muted">Soy:</h2>
         <label class="radio-label">
-          <input class="radio-input" type="radio" name="gender" value="male" checked/>
-          <span class="radio-span">Hombre</span>
-        </label>
-        
-        <label class="radio-label">
-          <input class="radio-input" type="radio" name="gender" value="female" />
-          <span class="radio-span">Mujer</span>
-        </label>
-      </div>
-  
-      <div class="register-busco d-flex flex-column">
-        <h2 class="text-muted">Busco:</h2>
-        <label class="radio-label">
-          <input class="radio-input" type="radio"  name="prefGen" value="male" name="radio" checked/>
+          <input
+            class="radio-input"
+            type="radio"
+            name="gender"
+            value="male"
+            checked
+          />
           <span class="radio-span">Hombre</span>
         </label>
 
         <label class="radio-label">
-          <input class="radio-input" type="radio" value="prefGen" name="radio"/>
+          <input
+            class="radio-input"
+            type="radio"
+            name="gender"
+            value="female"
+          />
+          <span class="radio-span">Mujer</span>
+        </label>
+      </div>
+
+      <div class="register-busco d-flex flex-column">
+        <h2 class="text-muted">Busco:</h2>
+        <label class="radio-label">
+          <input
+            class="radio-input"
+            type="radio"
+            name="prefGen"
+            value="male"
+            name="radio"
+            checked
+          />
+          <span class="radio-span">Hombre</span>
+        </label>
+
+        <label class="radio-label">
+          <input
+            class="radio-input"
+            type="radio"
+            value="prefGen"
+            name="radio"
+          />
           <span class="radio-span">Mujer</span>
         </label>
       </div>
@@ -46,75 +69,44 @@
       <hr class="red-hr" />
 
       <h2 class="text-muted">Gustos:</h2>
-      <div class="content-gustos d-flex justify-content-evenly container flex-wrap">
-        <label class="check-label">
-          <input class="check-input" type="checkbox">
-          <span class="check-span">
-            <i class="icon ri-game-line "></i>
-            Game
-          </span>
-        </label>
-  
-        <label class="check-label">
-          <input class="check-input" type="checkbox">
-          <span class="check-span">
-            <i class="icon ri-game-line "></i>
-            Game
-          </span>
-        </label>
-
-        <label class="check-label">
-          <input class="check-input" type="checkbox">
-          <span class="check-span">
-            <i class="icon ri-game-line "></i>
-            Game
-          </span>
-        </label>
-
-        <label class="check-label">
-          <input class="check-input" type="checkbox">
-          <span class="check-span">
-            <i class="icon ri-game-line "></i>
-            Game
-          </span>
-        </label>
-
-        <label class="check-label">
-          <input class="check-input" type="checkbox">
-          <span class="check-span">
-            <i class="icon ri-game-line "></i>
-            Game
-          </span>
-        </label>
-
-        <label class="check-label">
-          <input class="check-input" type="checkbox">
-          <span class="check-span">
-            <i class="icon ri-game-line "></i>
-            Game
-          </span>
-        </label>
-
-        <label class="check-label">
-          <input class="check-input" type="checkbox">
-          <span class="check-span">
-            <i class="icon ri-game-line "></i>
-            Game
-          </span>
-        </label>
+      <div
+        class="content-gustos d-flex justify-content-evenly container flex-wrap"
+      >
+        <div *ngFor="let option of options">
+          <label class="check-label">
+            <input
+              class="check-input"
+              type="checkbox"
+              name="options"
+              value="{{ option.value }}"
+              [(ngModel)]="option.checked"
+            />
+            <span class="check-span">
+              {{ option.name }}
+            </span>
+          </label>
+        </div>
       </div>
 
-      <textarea class="btn-tin" name="textarea" rows="10" cols="50" placeholder="Escribe sobre tí"></textarea>
-
+      <textarea
+        class="btn-tin"
+        name="textarea"
+        rows="10"
+        cols="50"
+        placeholder="Escribe sobre tí"
+      ></textarea>
 
       <hr class="red-hr" />
 
-      <button
+      <!-- <button
         class="btn-tin__submit"
-        (click)="registrar(user.value, pass.value)"
+        (click)="registrar(email.value, pass.value)"
       >
+    </button> -->
+      <button class="btn-tin__submit" (click)="getSelectedOptions()">
         Registrar
       </button>
+
       <!-- <button class="btn-tin__submit" (click)="login(user.value, pass.value)">Entrar</button> -->
       <!-- <button (click)="auth.logout()">Salir</button> -->
     </div>
