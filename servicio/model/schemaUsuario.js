@@ -1,0 +1,1 @@
+//Desarrollo del schema de la BBDD de mongo teniendo en cuenta lo indicado en Jira para crear los campos relativos a la colección usuario.
