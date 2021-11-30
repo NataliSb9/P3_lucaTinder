@@ -8,9 +8,9 @@
     "fetch": "^1.1.0",
     "mongodb": "^4.2.0",
     "mongoose": "^6.0.14",
+    "node-fetch": "^2.6.6",
     "nodemon": "^2.0.15"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "index.js"

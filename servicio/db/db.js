@@ -29,7 +29,7 @@ mongoose.connect('mongodb+srv://Lucatinder:LucatinderG4.@cluster0.f6f84.mongodb.
 //--------------------------------------------------------------------------------------------- Funcion para añadir personas a la base de datos: ---------------------------------
 
 
-function createUser(name, gender, email, age, descripcion, gustos, arrLikes, arrDislike, prefGen,foto) {
+function createUser(id, name, genero, email, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto) {
     function checkRespuesta(err, res) {
         if (err) {
             console.log('Error' + err)
@@ -39,9 +39,9 @@ function createUser(name, gender, email, age, descripcion, gustos, arrLikes, arr
     }
 
     let user = new User({
-    
+        id: id,
         name: name,
-        gender: gender,
+        genero: genero,
         email: email,
         age: age,
         descripcion: descripcion,
