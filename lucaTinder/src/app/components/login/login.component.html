@@ -1,11 +1,20 @@
-<div class="login">
-  <h1>
-    Inicio Sesión
-  </h1>
-  <input placeholder="Usuario" #user type="text">
-  <input placeholder="Contraseña" #pass type="password">
+<div class="login fondo-login">
+  <div class="card-login">
+    <div class="box">
+      <img class="logo" src="../../assets/imgs/dating_logo.png" alt="Logo LucaTinder">
+    <h1>
+      LUCATINDER
+    </h1>
+    <input class="btn-tin" placeholder="Usuario" #user type="text">
+    <input class="btn-tin" placeholder="Contraseña" #pass type="password">
+  
+    <a class="register text-muted" href="#">¿No tienes cuenta? Regístrate</a>
 
-  <!-- <button (click)="registrar(user.value, pass.value)">Registrar</button> -->
-  <button (click)="login(user.value, pass.value)">Entrar</button>
-  <button (click)="auth.logout()">Salir</button>
+    <!-- <button (click)="registrar(user.value, pass.value)">Registrar</button> -->
+    <button class="btn-tin__submit" (click)="login(user.value, pass.value)">Entrar</button>
+    <!-- <button (click)="auth.logout()">Salir</button> -->
+  </div>
+  </div>
 </div>
+
+
