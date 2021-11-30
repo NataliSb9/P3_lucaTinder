@@ -2,12 +2,10 @@
 .fondo-login {
     margin: 0;
     padding: 0;
-    height: 100vh;
     width: 100vw;
     justify-content: center;
     align-content: center;
     align-items: center;
-    display: flex;
     font-family: sans-serif;
     background: linear-gradient(to right, $color-blue-indigo, $color-pink-dark)
 }
@@ -33,11 +31,7 @@
     font-weight: 700;
     text-shadow: 1px 1px 1px $color-blue-indigo;
 }
-.text-muted{
-    color: $color-pink-dark !important;
-    font-size: 1em;
-    font-weight: 700;
-}
+
 
 .divider{
     margin-left: 8px;

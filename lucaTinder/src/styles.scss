@@ -35,10 +35,14 @@ $lucaTinder-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 @import './styles/variables';
+@import './styles/_radioButton';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+/* ----------------------------------------- */
+/* BOTONES */
+/* ------------------------------------------*/
 .btn-tin:focus,
 .btn-tin:focus {
     width: 300px;
@@ -87,3 +91,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .btn-tin::placeholder {
   color: $color-pink-light;
 }
+
+/* ----------------------------------------- */
+/* TEXTO */
+/* ------------------------------------------*/
+.text-muted{
+  color: $color-pink-dark !important;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* ----------------------------------------- */
+/* HELPERS */
+/* ------------------------------------------*/
+.red-hr {
+  background: $color-pink-dark;
+  height: 2px !important;
+}
+
+
+

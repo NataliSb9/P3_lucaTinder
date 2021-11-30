@@ -5,10 +5,14 @@
     <h1>
       LUCATINDER
     </h1>
+
+    <p class="text-muted">¡El lugar indicado si no te comes una rosca!</p>
+
     <input class="btn-tin" placeholder="Usuario" #user type="text">
     <input class="btn-tin" placeholder="Contraseña" #pass type="password">
   
-    <a class="register text-muted" href="#">¿No tienes cuenta? Regístrate</a>
+    <a routerLink="/register" class="register text-muted">¿No tienes cuenta? Regístrate</a>
+
 
     <!-- <button (click)="registrar(user.value, pass.value)">Registrar</button> -->
     <button class="btn-tin__submit" (click)="login(user.value, pass.value)">Entrar</button>
