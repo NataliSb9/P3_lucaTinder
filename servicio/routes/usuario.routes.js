@@ -22,7 +22,9 @@ usuarioRoute.route('/')
                 res.json(data);
             }
         });
+        
     }
+   
 );
 
 //endpoint: traer la info del usuario
