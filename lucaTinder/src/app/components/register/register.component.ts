@@ -3,10 +3,13 @@ import { AuthService } from 'src/app/services/auth.service';
 // models
 import { Usuario } from '../../models/usuario.model';
 
+// servicios
+import { UsuarioService } from 'src/app/services/usuario.service';
+
 @Component({
-  selector   : 'app-register',
+  selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls  : ['./register.component.scss'],
+  styleUrls: ['./register.component.scss'],
 })
 
 // FIREBASE
@@ -30,7 +33,7 @@ export class RegisterComponent implements OnInit {
   }
 
   // FORMULARIO
-  usuario: Usuario[] = [];
+  // usuario: Usuario[] = [];
 
   gustos: any[] = [
     { name: 'Libros', value: 'libros', checked: false },
@@ -47,41 +50,45 @@ export class RegisterComponent implements OnInit {
     { name: 'Pan', value: 'pan', checked: false },
     { name: 'Chocolate', value: 'chocolate', checked: false },
   ];
-  name       : string = '';
-  email      : string = '';
-  pass       : string = '';
-  age!        : number;
-  genero     : string = '';
-  prefGen    : string = '';
-  arrLikes   : string[] = [];
+  name: string = '';
+  email: string = '';
+  pass: string = '';
+  age!: number;
+  genero: string = '';
+  prefGen: string = '';
+  arrLikes: string[] = [];
   arrDislikes: string[] = [];
   descripcion: string = '';
-  foto: string = "";
+  foto: string = '';
 
-  getSelectedOptions(): any[] {
+  getSelectedCheckBox(): any[] {
     return this.gustos.filter((opt) => opt.checked).map((opt) => opt.value);
   }
 
   registraTest() {
-    this.getSelectedOptions();
-    this.usuario.push(
-      new Usuario(
-        this.name,
-        this.genero,
-        this.email,
-        this.age,
-        this.descripcion,
-        this.getSelectedOptions(),
-        this.arrLikes,
-        this.arrDislikes,
-        this.prefGen,
-        this.foto
-      )
+    this.getSelectedCheckBox();
+
+    let usuario: Usuario = new Usuario(
+      this.name,
+      this.genero,
+      this.email,
+      this.age,
+      this.descripcion,
+      this.getSelectedCheckBox(),
+      this.arrLikes,
+      this.arrDislikes,
+      this.prefGen,
+      this.foto
     );
 
-    console.log(this.usuario);
+    this.usuarioService.agregarUsuario(usuario).subscribe((data) => {
+      console.log(data);
+    });
   }
-  constructor(public auth: AuthService) {}
+  constructor(
+    public auth: AuthService,
+    private usuarioService: UsuarioService
+  ) {}
 
   ngOnInit(): void {
     // console.log(this.gustos);

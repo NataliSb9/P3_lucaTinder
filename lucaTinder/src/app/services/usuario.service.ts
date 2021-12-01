@@ -41,4 +41,8 @@ export class UsuarioService {
     }
     return usuarios;
   }
+
+  agregarUsuario(usuario:Usuario) {
+    return this.http.post(this.urlApi + '/join', usuario)
+  }
 }
