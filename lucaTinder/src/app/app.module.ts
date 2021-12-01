@@ -20,6 +20,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth/';
 import { environment } from 'src/environments/environment';
 import { MostrarCandidatosComponent } from './components/mostrar-candidatos/mostrar-candidatos.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
+import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component';
 
 
 
@@ -33,6 +35,8 @@ import { MostrarCandidatosComponent } from './components/mostrar-candidatos/most
     MatchesComponent,
     HomeComponent,
     MostrarCandidatosComponent,
+    UserCardComponent,
+    UserCardDeployComponent,
   ],
   imports: [
     BrowserModule,

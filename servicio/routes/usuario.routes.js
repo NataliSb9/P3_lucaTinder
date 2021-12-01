@@ -66,7 +66,6 @@ usuarioRoute.route('/join')
                 res.send(usuarioNuevo)
                 console.log(`usuario creado`)
             }
-            
         }
     }
 );
@@ -88,7 +87,6 @@ usuarioRoute.route('/home')
                 res.status(200).send(candidatos)
                 console.log(`Usuarios enviados`)
             }
-            
         }
     }
 );
