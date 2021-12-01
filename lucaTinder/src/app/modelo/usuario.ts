@@ -1,6 +1,7 @@
 export class Usuario {
     private id:string;
     private name:string;
+    private genero: string;
     private email: string;
     private age: number;
     private descripcion: string;
@@ -10,9 +11,10 @@ export class Usuario {
     private prefGen: string;
     private foto: string
 
-    constructor(id: string, name:string, email:string,age:number, descripcion:string, gustos: string[],arrLike:string[],arrDislike:string[], prefGen: string, foto: string){
+    constructor(id: string,name:string ,genero:string, email:string,age:number, descripcion:string, gustos: string[],arrLike:string[],arrDislike:string[], prefGen: string, foto: string){
         this.id=id;
         this.name=name;
+        this.genero =genero;
         this.email = email;
         this.age=age;
         this.descripcion = descripcion;
@@ -33,6 +35,10 @@ export class Usuario {
 
     public setName(name:string){
         this.name = name;
+    }
+
+    public getGenero():string{
+        return this.genero;
     }
 
     public getEmail():string{
@@ -71,8 +77,8 @@ export class Usuario {
         this.arrDislike.push(candidatesDonTLikesYou);
     }
 
-    public setGustos(gusto:string){
-        this.gustos.push(gusto)
+    public setGustos(aficiones:string){
+        this.gustos.push(aficiones)
     }
 
     public getPrefGen():string{
