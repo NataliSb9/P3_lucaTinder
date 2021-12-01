@@ -11,8 +11,8 @@
       <p class="text-muted">¡Únete a los come roscas!</p>
 
       <input class="btn-tin" placeholder="Nombre" type="text" [(ngModel)]="name"/>
-      <input class="btn-tin" placeholder="Email"  type="email" [(ngModel)]="email"/>
-      <input class="btn-tin" placeholder="Contraseña"  type="password" [(ngModel)]="pass"/>
+      <input #emailFire class="btn-tin" placeholder="Email"  type="email" [(ngModel)]="email"/>
+      <input #passFire class="btn-tin" placeholder="Contraseña"  type="password" [(ngModel)]="pass"/>
       <input class="btn-tin" placeholder="Edad"  type="number" [(ngModel)]="age"/>
 
       <hr class="red-hr" />
@@ -108,11 +108,11 @@
         (click)="registrar(email.value, pass.value)"
       >
     </button> -->
-      <button class="btn-tin__submit" (click)="registraTest()">
+      <!-- <button class="btn-tin__submit" (click)="registraTest()">
         Registrar
-      </button>
+      </button> -->
 
-      <!-- <button class="btn-tin__submit" (click)="login(user.value, pass.value)">Entrar</button> -->
+      <button class="btn-tin__submit" (click)="registrar(emailFire.value, passFire.value)">registrar</button>
       <!-- <button (click)="auth.logout()">Salir</button> -->
     </div>
   </div>
