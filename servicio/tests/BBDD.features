@@ -1,7 +1,0 @@
-feature: llevar usuarios de la api RandomUsers a mi Base de Datos de MongoAtlast
-
-@fetcher_de_API_RandomUsers
-Scenario:Recojemos informacion de 100 usuarios de la Api RandomUsers
-Given: La APi de url: "https://randomuser.me/api/?results=100" 
-When: Hago un fetch de esa direccion
-Then: Recibo en "data" los datos de esos 100 usuarios
