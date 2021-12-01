@@ -12,7 +12,7 @@ import { ListaLikesComponent } from './components/lista-likes/lista-likes.compon
 import{ HttpClientModule} from '@angular/common/http';
 import { ListaDislikesComponent } from './components/lista-dislikes/lista-dislikes.component';
 import { MatchesComponent } from './components/matches/matches.component';
-import { UsuarioService } from './servicio/usuario.service';
+import { UsuarioService } from './services/usuario.service';
 
 //FIREN
 import { AngularFireModule } from '@angular/fire/compat';

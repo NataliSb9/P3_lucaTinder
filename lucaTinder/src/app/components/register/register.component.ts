@@ -50,12 +50,13 @@ export class RegisterComponent implements OnInit {
   name       : string = '';
   email      : string = '';
   pass       : string = '';
-  age        : number | undefined;
+  age!        : number;
   genero     : string = '';
   prefGen    : string = '';
   arrLikes   : string[] = [];
   arrDislikes: string[] = [];
   descripcion: string = '';
+  foto: string = "";
 
   getSelectedOptions(): any[] {
     return this.gustos.filter((opt) => opt.checked).map((opt) => opt.value);
@@ -68,11 +69,13 @@ export class RegisterComponent implements OnInit {
         this.name,
         this.genero,
         this.email,
-        this.prefGen,
+        this.age,
+        this.descripcion,
         this.getSelectedOptions(),
         this.arrLikes,
         this.arrDislikes,
-        this.descripcion
+        this.prefGen,
+        this.foto
       )
     );
 
