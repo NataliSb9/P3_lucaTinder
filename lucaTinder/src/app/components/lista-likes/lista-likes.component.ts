@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { UsuarioService } from '../../servicio/usuario.service';
+import { Usuario } from '../../models/usuario.model';
 
 @Component({
   selector: 'app-lista-likes',
@@ -7,15 +8,18 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   styleUrls: ['./lista-likes.component.scss']
 })
 export class ListaLikesComponent implements OnInit {
-// Node/Express API
-REST_API: string = 'http://localhost:8000/api';
- 
-// Http Header
-httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-  constructor(private httpClient: HttpClient) { }
+  mailUser:any =''
+  currentUser!:Usuario
+  listaGustos!:String[]
+  listaQueridos!:Usuario[]
+
+  constructor(private servicio:UsuarioService) { }
 
   ngOnInit(): void {
-    
+   let mailPersona=localStorage.getItem('usuarioActual');
+   this.mailUser=mailPersona;
+   this.servicio.getInfoUsuario(this.mailUser).subscribe((data)=>{
+     console.log(data)})
   }
 
   

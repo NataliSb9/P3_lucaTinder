@@ -22,6 +22,7 @@ fetch('https://randomuser.me/api/?results=100')
 
             for (let i = 0; i < 100; i++) {
                 let id = i;
+                let pass=data.results[i].login.password;
                 let name = `${data.results[i].name.first} ${data.results[i].name.last}`;
                 let genero = data.results[i].gender;
                 let email = data.results[i].email;
@@ -57,16 +58,16 @@ fetch('https://randomuser.me/api/?results=100')
                     gustos.push("Netflix", "Youtube", "Andorra")
                 };
                 if (i % 3 == 0) {
-                    gustos.push("Farlopa", "Desarrollo", "Futbol")
+                    gustos.push("Feria", "Desarrollo", "Futbol")
                 } else {
                     gustos.push("Cine", "Té", "Filetes")
                 };
                 if (i % 5 == 0) {
-                    gustos.push("Marvel", "Fascismo", "Porno")
+                    gustos.push("Marvel", "Fabulas", "Palomitas")
                 } else {
                     gustos.push("Pan", "Chocololate")
                 }
-                createUser( name, genero, email, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto)
+                createUser(name, genero, email,pass, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto)
 //id 
 
 

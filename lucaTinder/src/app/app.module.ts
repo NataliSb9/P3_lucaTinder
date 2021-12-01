@@ -13,11 +13,13 @@ import{ HttpClientModule} from '@angular/common/http';
 import { ListaDislikesComponent } from './components/lista-dislikes/lista-dislikes.component';
 import { MatchesComponent } from './components/matches/matches.component';
 import { UsuarioService } from './servicio/usuario.service';
+import { HomeComponent } from './components/home/home.component';
 
 //FIREN
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth/';
 import { environment } from 'src/environments/environment';
+
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { environment } from 'src/environments/environment';
     LoginComponent,
     ListaLikesComponent,
     ListaDislikesComponent,
-    MatchesComponent
+    MatchesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

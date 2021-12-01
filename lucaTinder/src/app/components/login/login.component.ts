@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,7 +18,8 @@ export class LoginComponent implements OnInit {
   try {
     await this.auth.login(user,pass)
     alert("Has Entrado")
-    
+    localStorage.setItem('usuarioActual',user)
+    window.location.href='./usuario'
   } catch (e:any) {
     alert(e.message);
   }
