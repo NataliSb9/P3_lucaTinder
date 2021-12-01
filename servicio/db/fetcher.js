@@ -11,6 +11,7 @@
 
 const fetch = require('node-fetch');
 const createUser = require('./db');
+const descripciones= require("./descripciones")
 
 
 fetch('https://randomuser.me/api/?results=100')
@@ -26,7 +27,7 @@ fetch('https://randomuser.me/api/?results=100')
                 let email = data.results[i].email;
                 let age = data.results[i].dob.age;
                 let foto = data.results[i].picture.medium;
-                let descripcion = data.results[i].location.coordinates.latitude;
+                let descripcion = descripciones[i];
                 let arrLikes = [];
                 let arrDislike = [];
                 let prefGen;
@@ -39,14 +40,14 @@ fetch('https://randomuser.me/api/?results=100')
                 for (let j = 0; j < 10; j++) {
                      r = getRandom(0, 99);
                     if (data.results[r].gender === prefGen) {
-                        arrLikes.push(r);
+                        arrLikes.push(data.results[r].email);
                     }
                 }
                 let t;
                 for (let j = 0; j < 10; j++) {
                      t = getRandom(0, 99);
                     if (data.results[t].gender === prefGen) {
-                        arrDislike.push(t);
+                        arrDislike.push(data.results[t].email);
                     }
                 }
                 let gustos = [];
@@ -65,8 +66,8 @@ fetch('https://randomuser.me/api/?results=100')
                 } else {
                     gustos.push("Pan", "Chocololate")
                 }
-                createUser(id, name, genero, email, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto)
-
+                createUser( name, genero, email, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto)
+//id 
 
 
             }
