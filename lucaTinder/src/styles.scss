@@ -34,6 +34,80 @@ $lucaTinder-theme: mat.define-light-theme((
 @include mat.all-component-themes($lucaTinder-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@import './styles/variables';
+@import './styles/_radioButton';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* ----------------------------------------- */
+/* BOTONES */
+/* ------------------------------------------*/
+.btn-tin:focus,
+.btn-tin:focus {
+    width: 300px;
+    border-color: $color-pink-light;
+}
+
+.btn-tin__submit {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid $color-pink-dark;
+    padding: 14px 40px;
+    outline: none;
+    color: $color-pink-dark;
+    font-size: 1em;
+    font-weight: 800;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.btn-tin {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid $color-pink-dark;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: $color-pink-dark;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 24px;
+  transition: 0.25s
+}
+
+.btn-tin__submit:hover {
+  background: $color-pink-dark;
+  color: black;
+}
+
+.btn-tin::placeholder {
+  color: $color-pink-light;
+}
+
+/* ----------------------------------------- */
+/* TEXTO */
+/* ------------------------------------------*/
+.text-muted{
+  color: $color-pink-dark !important;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+/* ----------------------------------------- */
+/* HELPERS */
+/* ------------------------------------------*/
+.red-hr {
+  background: $color-pink-dark;
+  height: 2px !important;
+}
+
+
+

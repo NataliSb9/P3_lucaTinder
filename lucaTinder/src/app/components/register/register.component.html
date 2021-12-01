@@ -1,0 +1,119 @@
+<div class="login fondo-login">
+  <div class="card-login">
+    <div class="box">
+      <img
+        class="logo"
+        src="../../assets/imgs/dating_logo.png"
+        alt="Logo LucaTinder"
+      />
+      <h1>LUCATINDER</h1>
+
+      <p class="text-muted">¡Únete a los come roscas!</p>
+
+      <input class="btn-tin" placeholder="Nombre" type="text" [(ngModel)]="name"/>
+      <input class="btn-tin" placeholder="Email"  type="email" [(ngModel)]="email"/>
+      <input class="btn-tin" placeholder="Contraseña"  type="password" [(ngModel)]="pass"/>
+      <input class="btn-tin" placeholder="Edad"  type="number" [(ngModel)]="age"/>
+
+      <hr class="red-hr" />
+
+      <div class="register-soy d-flex flex-column">
+        <h2 class="text-muted">Soy:</h2>
+        <label class="radio-label">
+          <input
+          [(ngModel)]="genero"
+            class="radio-input"
+            type="radio"
+            name="gender"
+            value="male"
+            checked
+          />
+          <span class="radio-span">Hombre</span>
+        </label>
+
+        <label class="radio-label">
+          <input
+          [(ngModel)]="genero"
+            class="radio-input"
+            type="radio"
+            name="gender"
+            value="female"
+          />
+          <span class="radio-span">Mujer</span>
+        </label>
+      </div>
+
+      <div class="register-busco d-flex flex-column">
+        <h2 class="text-muted">Busco:</h2>
+        <label class="radio-label">
+          <input
+          [(ngModel)]="prefGen"
+            class="radio-input"
+            type="radio"
+            name="prefGen"
+            value="male"
+            name="radio"
+            checked
+          />
+          <span class="radio-span">Hombre</span>
+        </label>
+
+        <label class="radio-label">
+          <input
+          [(ngModel)]="prefGen"
+            class="radio-input"
+            type="radio"
+            value="female"
+            name="prefGen"
+          />
+          <span class="radio-span">Mujer</span>
+        </label>
+      </div>
+
+      <hr class="red-hr" />
+
+      <h2 class="text-muted">Gustos:</h2>
+      <div
+        class="content-gustos d-flex justify-content-evenly container flex-wrap"
+      >
+        <div *ngFor="let option of gustos">
+          <label class="check-label">
+            <input
+              class="check-input"
+              type="checkbox"
+              name="gustos"
+              value="{{ option.value }}"
+              [(ngModel)]="option.checked"
+            />
+            <span class="check-span">
+              {{ option.name }}
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <textarea
+      [(ngModel)]="descripcion"
+        class="btn-tin"
+        name="textarea"
+        rows="10"
+        cols="50"
+        placeholder="Escribe sobre tí"
+      ></textarea>
+
+      <hr class="red-hr" />
+
+      <!-- <button
+        class="btn-tin__submit"
+        (click)="registrar(email.value, pass.value)"
+      >
+    </button> -->
+      <button class="btn-tin__submit" (click)="registraTest()">
+        Registrar
+      </button>
+
+      <!-- <button class="btn-tin__submit" (click)="login(user.value, pass.value)">Entrar</button> -->
+      <!-- <button (click)="auth.logout()">Salir</button> -->
+    </div>
+  </div>
+</div>
