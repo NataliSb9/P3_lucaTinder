@@ -21,7 +21,6 @@ const usuarioRoute = require('./routes/usuario.routes');
 
 const app = express();
 
-app.use('/lucaTinder', usuarioRoute)
 //MIDLEWARE
 
 //Inicio la aplicación con express con la función
@@ -41,7 +40,7 @@ app.use(cors());
 //No tengo clara la funcionalidad de este middleware para la aplicación de LucaTinder
 //app.use(express.static(path.join(__dirname, '')));
 
-//Puerto
+app.use('/lucatinder', usuarioRoute)
 
 const puerto = 3000;
 

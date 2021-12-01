@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const schema = new mongoose.Schema({
     
     name: String,
-    gender: String,
+    genero: String,
     email: String,
     age:Number,
     descripcion:String,
