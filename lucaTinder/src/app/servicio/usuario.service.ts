@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from '../modelo/usuario';
 
+//Me traigo el HTttpHeaders para luego poder hacer el delete con angular, mirar el siguiente recurso para poder eliminar con el body y no a través de parametros de un req.query
+//https://stackoverflow.com/questions/54017088/angular-7-http-delete-api-handle-body/54017685
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +12,12 @@ export class UsuarioService {
   private urlApi: string = "http://localhost:3000/lucatinder"
 
   constructor(private http: HttpClient) { }
+
   //Metodo para obtener la info de todos los usuarios
   getInfoUsuarios(): any {
     return this.http.get(this.urlApi)
   }
-  
+
   //Metodo para obtener la info de un solo usuario
   getInfoUsuario(email: string) {
     return this.http.get(this.urlApi + "/usuario" + "?email=" + email)
