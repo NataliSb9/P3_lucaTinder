@@ -10,10 +10,10 @@
 
       <p class="text-muted">¡Únete a los come roscas!</p>
 
-      <input class="btn-tin" placeholder="Nombre" #user type="text" />
-      <input class="btn-tin" placeholder="Email" #email type="email" />
-      <input class="btn-tin" placeholder="Contraseña" #pass type="password" />
-      <input class="btn-tin" placeholder="Edad" #edad type="number" />
+      <input class="btn-tin" placeholder="Nombre" type="text" [(ngModel)]="name"/>
+      <input class="btn-tin" placeholder="Email"  type="email" [(ngModel)]="email"/>
+      <input class="btn-tin" placeholder="Contraseña"  type="password" [(ngModel)]="pass"/>
+      <input class="btn-tin" placeholder="Edad"  type="number" [(ngModel)]="age"/>
 
       <hr class="red-hr" />
 
@@ -21,6 +21,7 @@
         <h2 class="text-muted">Soy:</h2>
         <label class="radio-label">
           <input
+          [(ngModel)]="genero"
             class="radio-input"
             type="radio"
             name="gender"
@@ -32,6 +33,7 @@
 
         <label class="radio-label">
           <input
+          [(ngModel)]="genero"
             class="radio-input"
             type="radio"
             name="gender"
@@ -45,6 +47,7 @@
         <h2 class="text-muted">Busco:</h2>
         <label class="radio-label">
           <input
+          [(ngModel)]="prefGen"
             class="radio-input"
             type="radio"
             name="prefGen"
@@ -57,10 +60,11 @@
 
         <label class="radio-label">
           <input
+          [(ngModel)]="prefGen"
             class="radio-input"
             type="radio"
-            value="prefGen"
-            name="radio"
+            value="female"
+            name="prefGen"
           />
           <span class="radio-span">Mujer</span>
         </label>
@@ -72,12 +76,12 @@
       <div
         class="content-gustos d-flex justify-content-evenly container flex-wrap"
       >
-        <div *ngFor="let option of options">
+        <div *ngFor="let option of gustos">
           <label class="check-label">
             <input
               class="check-input"
               type="checkbox"
-              name="options"
+              name="gustos"
               value="{{ option.value }}"
               [(ngModel)]="option.checked"
             />
@@ -89,6 +93,7 @@
       </div>
 
       <textarea
+      [(ngModel)]="descripcion"
         class="btn-tin"
         name="textarea"
         rows="10"
@@ -103,7 +108,7 @@
         (click)="registrar(email.value, pass.value)"
       >
     </button> -->
-      <button class="btn-tin__submit" (click)="getSelectedOptions()">
+      <button class="btn-tin__submit" (click)="registraTest()">
         Registrar
       </button>
 
