@@ -19,6 +19,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth/';
 import { environment } from 'src/environments/environment';
+import { UserCardComponent } from './components/user-card/user-card.component';
+import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component';
 
 
 
@@ -31,6 +33,8 @@ import { environment } from 'src/environments/environment';
     ListaDislikesComponent,
     MatchesComponent,
     HomeComponent,
+    UserCardComponent,
+    UserCardDeployComponent,
   ],
   imports: [
     BrowserModule,
