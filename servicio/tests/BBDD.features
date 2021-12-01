@@ -1,0 +1,4 @@
+feature: llevar usuarios de la api RandomUsers a mi Base de Datos de MongoAtlast
+
+@fetcher_de_API_RandomUsers
+Scenario:Recojemos informacion de la Api RandomUsers

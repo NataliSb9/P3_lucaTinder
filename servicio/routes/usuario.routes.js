@@ -5,7 +5,7 @@ const app = express();
 // route() miniaplicación”, capaz solo de realizar funciones de middleware y enrutamiento. Cada aplicación Express tiene un enrutador de aplicaciones incorporado.
 //  Router() method that creates a new router object.
 const usuarioRoute = express.Router();
-
+git 
 //importo el schema de la BBDD
 
 let Usuario = require('../model/schemaUsuario.js');
