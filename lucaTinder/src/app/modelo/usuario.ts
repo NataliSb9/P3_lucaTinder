@@ -5,16 +5,20 @@ export class Usuario {
     private age: number;
     private descripcion: string;
     private gustos: string[];
+    private arrLike: string[];
+    private arrDislike: string[];
     private prefGen: string;
     private foto: string
 
-    constructor(id: string, name:string, email:string,age:number, descripcion:string, gustos: string[], prefGen: string, foto: string){
+    constructor(id: string, name:string, email:string,age:number, descripcion:string, gustos: string[],arrLike:string[],arrDislike:string[], prefGen: string, foto: string){
         this.id=id;
         this.name=name;
         this.email = email;
         this.age=age;
         this.descripcion = descripcion;
         this.gustos = gustos;
+        this.arrLike = arrLike;
+        this.arrDislike = arrDislike;
         this.prefGen = prefGen;
         this.foto =foto;
     }
@@ -49,6 +53,22 @@ export class Usuario {
 
     public getGustos():string []{
         return this.gustos;
+    }
+
+    public getArrLike(): string[]{
+        return this.arrLike;
+    }
+
+    public setArrLike(candidatesLikesYou:string){
+        this.arrLike.push(candidatesLikesYou);
+    }
+
+    public getArrDislike():string[]{
+        return this.arrDislike
+    } 
+
+    public setArrDislike(candidatesDonTLikesYou:string){
+        this.arrDislike.push(candidatesDonTLikesYou);
     }
 
     public setGustos(gusto:string){
