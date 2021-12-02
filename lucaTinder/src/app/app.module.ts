@@ -23,6 +23,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
+import { ConocePersonaComponent } from './components/conoce-persona/conoce-persona.component';
 
 
 
@@ -39,6 +40,7 @@ import { ProfileInfoComponent } from './components/profile-info/profile-info.com
     UserCardDeployComponent,
     HeaderComponent,
     ProfileInfoComponent,
+    ConocePersonaComponent,
   ],
   imports: [
     BrowserModule,
