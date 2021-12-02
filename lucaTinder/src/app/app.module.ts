@@ -22,6 +22,7 @@ import { environment } from 'src/environments/environment';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 
 
 
@@ -37,6 +38,7 @@ import { HeaderComponent } from './components/header/header.component';
     UserCardComponent,
     UserCardDeployComponent,
     HeaderComponent,
+    ProfileInfoComponent,
   ],
   imports: [
     BrowserModule,

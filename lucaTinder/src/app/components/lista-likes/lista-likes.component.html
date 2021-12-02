@@ -1,44 +1,8 @@
-<div class="container">
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h2 class="h2">  {{this.mailUser}}, Tu lista de Likes es:  </h2>
-  </div>
 
 
-
-
-  
-  <div class="container">
-    <div class="d-flex flex-column"></div>
-    <div class="row p-2">
-      <div class="col-lg-2 col-md-4 col-8">
-        <!-- Content -->
-      </div>
-      <div class="col-lg-2 col-md-4">
-        <!-- Content -->
-      </div>
-      <div class="col-lg-2">
-        <!-- Content -->
-      </div>
-      <div class="col-lg-2">
-        <!-- Content -->
-      </div>
-    </div>
-  </div>
-  <!-- separacion ------------------------------------------------->
-  <div class="row p-2">
-    <div class="col-lg-2 col-md-4 col-8">
-      <!-- Content -->
-    </div>
-    <div class="col-lg-2 col-md-4">
-      <!-- Content -->
-    </div>
-    <div class="col-lg-2">
-      <!-- Content -->
-    </div>
-    <div class="col-lg-2">
-      <!-- Content -->
-    </div>
-  </div>
+<div class="likeContainer">
+<div *ngFor="let i of this.listaQueridos" class="cardDiv">
+<app-user-card [usuario]="i"> </app-user-card>
 </div>
-
+</div>
 
