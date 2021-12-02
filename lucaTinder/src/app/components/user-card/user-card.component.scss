@@ -30,14 +30,14 @@ $color-pink-dark: #c1165c;
     width: 28px;
     margin-top: 4px;
     margin-left: 3px;
-    content: url("../../assets/imgs/gratipay-brands-dp.svg");
+    content: url("../../../assets/imgs/gratipay-brands-dp.svg");
   }
 }
 
 .sector_status:hover{
     background-color: $color-pink-dark;
   img{
-    content: url("../../assets/imgs/gratipay-brands.svg");
+    content: url("../../../assets/imgs/gratipay-brands.svg");
   }
 }
 
@@ -91,7 +91,7 @@ $color-pink-dark: #c1165c;
 #like_link{
   height: 28px !important;
   width: 28px !important;
-  content: url("../../assets/imgs/heart-solid-dp.svg");
+  content: url("../../../assets/imgs/heart-solid-dp.svg");
   margin-left: -5px;
   margin-bottom: -6px;
 }
@@ -99,7 +99,7 @@ $color-pink-dark: #c1165c;
 #dislike_link{
   height: 28px !important;
   width: 28px !important;
-  content: url("../../assets/imgs/heart-broken-solid-dp.svg");
+  content: url("../../../assets/imgs/heart-broken-solid-dp.svg");
   margin-right: -5px;
   margin-bottom: -6px;
 }
@@ -108,7 +108,7 @@ $color-pink-dark: #c1165c;
   margin-top: 5px;
   height: 35px !important;
   width: 35px !important;
-  content: url("../../assets/imgs/eye-solid-dp.svg");
+  content: url("../../../assets/imgs/eye-solid-dp.svg");
 }
 
 .profile-card .profile-content::before {
@@ -124,12 +124,6 @@ $color-pink-dark: #c1165c;
   transform: skewY(3deg);
 }
 
-.profile-card:hover {
-  #profile_img {
-    //transform: rotate(5deg) scale(1.1, 1.1);
-    //filter: brightness(110%);
-  }
-}
 
 .reactions {
   display: flex;
@@ -160,14 +154,14 @@ $color-pink-dark: #c1165c;
 .btn_dislike_div:hover{
   background-color: $color-pink-dark;
   #dislike_link{
-    content: url("../../assets/imgs/heart-broken-solid.svg");
+    content: url("../../../assets/imgs/heart-broken-solid.svg");
   }
 }
 
 .btn_like_div:hover{
   background-color: $color-pink-dark;
   #like_link{
-    content: url("../../assets/imgs/heart-solid.svg");
+    content: url("../../../assets/imgs/heart-solid.svg");
   }
 }
 
@@ -186,6 +180,6 @@ $color-pink-dark: #c1165c;
   background-color: $color-pink-dark;
   display: flex;
   #info_link{
-    content: url("../../assets/imgs/eye-solid.svg");
+    content: url("../../../assets/imgs/eye-solid.svg");
   }
 }
