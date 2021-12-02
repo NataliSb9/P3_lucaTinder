@@ -1,4 +1,5 @@
 export class Usuario {
+  _id: any;
   name: string = '';
   genero: string = '';
   email: string = '';
@@ -12,6 +13,7 @@ export class Usuario {
 
 
   constructor(
+    id:number,
     name: string,
     genero: string,
     email: string,
@@ -23,6 +25,7 @@ export class Usuario {
     prefGen: string,
     foto: string,
   ) {
+    this._id = id;
     this.name = name;
     this.genero = genero;
     this.email = email;

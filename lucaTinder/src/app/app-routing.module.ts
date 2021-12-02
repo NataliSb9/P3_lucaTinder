@@ -11,7 +11,7 @@ import { ProfileInfoComponent } from './components/profile-info/profile-info.com
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
   },
   {

@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
       this.registraUsuarioDDBB()
       alert('Te has registrado');
       localStorage.setItem('usuarioActual', emailFire);
-      window.location.href = './usuario';
+      window.location.href = './home';
     } catch (e: any) {
       alert(e.message);
     }
@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
     { name: 'Pan', value: 'pan', checked: false },
     { name: 'Chocolate', value: 'chocolate', checked: false },
   ];
+  _id:number =0;
   name: string = '';
   email: string = '';
   pass: string = '';
@@ -63,6 +64,7 @@ export class RegisterComponent implements OnInit {
     this.getSelectedCheckBox();
 
     let usuario: Usuario = new Usuario(
+      this._id,
       this.name,
       this.genero,
       this.email,
