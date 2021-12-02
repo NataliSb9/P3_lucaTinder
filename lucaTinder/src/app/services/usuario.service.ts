@@ -23,6 +23,10 @@ export class UsuarioService {
     return this.http.get(this.urlApi + "/usuario" + "?email=" + email)
   }
 
+  getInfoUsuarioID(email: string) {
+    return this.http.get(this.urlApi + "/usuario_id" + "?email=" + email)
+  }
+
   getDiezCandidatos(prefGen: string):any {
     return this.http.get(this.urlApi+"home"+ "?prefgen=" + prefGen)
   }

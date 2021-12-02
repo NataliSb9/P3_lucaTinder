@@ -11,7 +11,7 @@ import { ProfileInfoComponent } from './components/profile-info/profile-info.com
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
   },
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path:'usuario',component:HomeComponent, children: [
+    path:'home',component:HomeComponent, children: [
       {path:'listaLike',component:ListaLikesComponent,children: [
         {path:'Card',component:UserCardComponent,
       },

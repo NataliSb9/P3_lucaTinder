@@ -41,6 +41,19 @@ usuarioRoute.route('/usuario')
         }
     })
 
+    usuarioRoute.route('/usuario_id')
+    .get((req,res)=>{
+        Usuario.find({email:req.query.email},{_id: 1} , checkRespuesta);
+        function checkRespuesta(err,usuario){
+            if(err){
+                res.status(400).send('Error'+ err)
+            }else{
+                res.status(200).send(usuario)
+                console.log("infoenviada")
+            }
+        }
+    })
+
 
 //Endpoint: Registro
 //con este endPoint registro al usuario

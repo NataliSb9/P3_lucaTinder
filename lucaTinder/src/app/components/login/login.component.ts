@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
       await this.auth.login(user, pass);
       // alert('Has Entrado');
       localStorage.setItem('usuarioActual', user);
-      window.location.href = './usuario';
+      window.location.href = './home';
     } catch (e: any) {
       // alert(e.message);
       // console.log(e.message);
