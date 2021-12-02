@@ -89,7 +89,7 @@ usuarioRoute.route('/join')
 //endpoint home:    
 //mostrar 10 usuarios:
 
-usuarioRoute.route('/home')
+usuarioRoute.route('/conocepersonas')
     .get( (req,res) => {
 
     Usuario.find({genero:req.query.prefGen},checkRespuesta).limit(10);
