@@ -1,0 +1,81 @@
+$color-blue-indigo: #2e336a;
+$color-pink-light: #e91d62;
+$color-pink-dark: #c1165c;
+
+
+.header-component {
+
+  color: $color-blue-indigo;
+  font-weight: 700;
+
+    .h1-img{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+  h1 {
+    padding-top: 20px;
+    color: $color-blue-indigo;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 700;
+  }
+
+  img{
+      margin-top: 15px;
+      height: 85px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5em;
+    padding-bottom: 25px !important;
+  }
+
+  main {
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: white;
+    box-shadow: 0 0 5px $color-blue-indigo;
+  }
+
+  h1 {
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  nav {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    flex-grow: 1;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+  }
+
+  // animmation
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transform: scaleX(0);
+    background: $color-blue-indigo;
+    transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
+  }
+
+  nav a:hover::after {
+    transform: scaleX(1)
+  }
+}
