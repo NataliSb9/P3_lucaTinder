@@ -10,23 +10,28 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class ConocePersonaComponent implements OnInit {
   usuario!: Usuario;
   email!: string | null;
+  generoPreference!: string;
+  personas: Usuario[] = [];
 
   constructor( private usuarioServicio: UsuarioService) { 
     this.email= localStorage.getItem('usuarioActual')
   }
 
-  getInfoUsuario(){
 
-  }
 
   ngOnInit(): void {
     if (typeof this.email === "string") {
-      console.log(this.email)
       this.usuarioServicio.getInfoUsuario(this.email).subscribe((data: any) => {
         this.usuario = this.usuarioServicio.convertirAUsuarioDeUnArr(data);
-        console.log(this.usuario)
+        this.generoPreference = this.usuario.prefGen;
+        console.log(this.generoPreference)
+        this.usuarioServicio.getDiezCandidatos(this.generoPreference).subscribe((data:any) =>{
+          this.personas = this.usuarioServicio.convertirAUsuarios(data)
+          console.log(this.personas)
+        })
       })
     }
+    
   }
 
 }

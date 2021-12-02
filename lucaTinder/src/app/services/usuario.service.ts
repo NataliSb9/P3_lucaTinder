@@ -28,12 +28,14 @@ export class UsuarioService {
   }
 
   getDiezCandidatos(prefGen: string):any {
-    return this.http.get(this.urlApi+"home"+ "?prefgen=" + prefGen)
-  }
+    let ruta:string= this.urlApi+"/conocepersonas"+ "?prefGen=" + prefGen;
+    console.log(ruta)
+    return this.http.get(ruta)
+   
+  }  
 
   //Metodos para convertir la información que me llega de la API
   convertirAUsuarioDeUnArr(resp: any[]): Usuario {
-
     let usuario: Usuario = new Usuario(0,"", "","",0,"" ,[], [], [],"", "");
     for (let i = 0; i < resp.length; i++) {
       usuario = new Usuario(resp[i]._id,resp[i].name, resp[i].genero, resp[i].email,resp[i].age,resp[i].descripcion ,resp[i].gustos, resp[i].arrLikes, resp[i].arrDislike,resp[i].prefGen, resp[i].foto);
