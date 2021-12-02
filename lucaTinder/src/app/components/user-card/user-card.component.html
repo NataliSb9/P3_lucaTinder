@@ -1,28 +1,27 @@
-
-  <div class="profile-card text-center">
-    <div class="sector_status">
-      <a href="" title="dislike_link" id="like_status_link"><img class="icon-emogi-img" alt=""></a>
-    </div>
-    <img id="profile_img" src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg" alt=""
-      class="img img-responsive">
-    <div class="profile-content">
-      <div class="profile-name">{{usuario.name}}
-        <p>@johndoedesigner</p>
-      </div>
-      <div class="profile-description">Hola mami soy el pepe como hagamos match te voy a dar mas duro que un sordo a una
-        campana!!!/div>
-      </div>
-      <div class="reactions">
-        <div class="btn btn_like_div" id="btn_like_div">
-          <a href="" title="like_link" id="like_link"><img class="icon-emogi-img" alt=""></a>
-        </div>
-        <div class="btn-info_div">
-          <button (click)="redirectToInfo()" title="info_link" id="info_link"><img class="icon-emogi-img" alt=""></button>
-        </div>
-        <div class="btn btn_dislike_div" id="btn_dislike_div">
-          <a href="" title="dislike_link" id="dislike_link"><img class="icon-emogi-img" alt=""></a>
-        </div>
-      </div>
-    </div>
+<div class="profile-card text-center">
+  <div class="sector_status">
+    <a href="" title="dislike_link" id="like_status_link"><img class="icon-emogi-img" alt=""></a>
   </div>
+  <img id="profile_img" src="{{usuario.foto}}" alt="" class="img img-responsive">
+  <div class="profile-content">
+    <div class="profile-name">{{usuario.name}}
+      <p>{{usuario.email}}  
+        
+      </p>
+    </div>
+    <div class="profile-description">{{usuario.descripcion}} </div>
+  </div>
+  <div class="reactions">
+    <div class="btn btn_like_div" id="btn_like_div" *ngIf="btnMostrador !== false">
+      <a href="" title="like_link" id="like_link"><img class="icon-emogi-img" alt=""></a>
+    </div>
+    <div class="btn-info_div">
+      <button (click)="redirectToInfo()"><a title="info_link" id="info_link"><img class="icon-emogi-img"
+            alt=""></a></button>
+    </div>
+    <div class="btn btn_dislike_div" id="btn_dislike_div" *ngIf="btnMostrador !== false">
+      <a href="" title="dislike_link" id="dislike_link"><img class="icon-emogi-img" alt=""></a>
+    </div>
 
+  </div>
+</div>

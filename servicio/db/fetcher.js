@@ -27,7 +27,7 @@ fetch('https://randomuser.me/api/?results=100')
                 let genero = data.results[i].gender;
                 let email = data.results[i].email;
                 let age = data.results[i].dob.age;
-                let foto = data.results[i].picture.medium;
+                let foto = data.results[i].picture.large;
                 let descripcion = descripciones[i];
                 let arrLikes = [];
                 let arrDislike = [];
@@ -67,7 +67,7 @@ fetch('https://randomuser.me/api/?results=100')
                 } else {
                     gustos.push("Pan", "Chocololate")
                 }
-                createUser(name, genero, email,pass, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto)
+                createUser(id,name, genero, email,pass, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto)
 //id 
 
 

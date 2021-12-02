@@ -13,6 +13,7 @@ export class ListaLikesComponent implements OnInit {
   listaGustos:any[]=[]
   listaQueridos:Usuario[]=[]
   queridoActual!:Usuario
+  public mostrador: boolean = false
   constructor(private servicio:UsuarioService) { }
 
   ngOnInit(): void {
@@ -20,19 +21,20 @@ export class ListaLikesComponent implements OnInit {
    this.servicio.getInfoUsuario(this.mailUser).subscribe((data:any)=>{
     this.currentUser=this.servicio.convertirAUsuario(data[0]);
     this.listaGustos=this.currentUser.arrLikes;
-    //console.log(this.listaGustos);
+    console.log(this.listaGustos);
     for (let j=0;j<this.listaGustos.length;j++){
       this.servicio.getInfoUsuario(this.listaGustos[j]).subscribe((datos:any)=>{
         //this.listaQueridos.push(this.servicio.convertirAUsuario(datos[0]))
         this.queridoActual=this.servicio.convertirAUsuario(datos[0])
         this.listaQueridos.push(this.queridoActual)
-        console.log(this.servicio.convertirAUsuario(datos[0]))
         
       })
       
     }
     console.log(this.listaQueridos)
    })
+
+  
     
    
   }  

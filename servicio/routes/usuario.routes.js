@@ -30,6 +30,8 @@ usuarioRoute.route('/')
 //endpoint: traer la info del usuario
 usuarioRoute.route('/usuario')
     .get((req,res)=>{
+        //email: campo o parametro por el que vamos a buscar en mongo
+        //req.query.email(Bartolo) :key del parametro pepe en la API 
         Usuario.find({email:req.query.email}, checkRespuesta);
         function checkRespuesta(err,usuario){
             if(err){
@@ -90,6 +92,9 @@ usuarioRoute.route('/home')
         }
     }
 );
+
+
+
 
 //endpoint: editar perfil de usuario
 module.exports = usuarioRoute;

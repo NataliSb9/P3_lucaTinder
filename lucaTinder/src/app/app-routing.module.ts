@@ -19,11 +19,9 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path:'usuario',component:HomeComponent, children: [
-      {path:'listaLike',component:ListaLikesComponent,children: [
-        {path:'Card',component:UserCardComponent,
+    path:'home',component:HomeComponent, children: [
+      {path:'listaLike',component:ListaLikesComponent
       },
-      ]},
       {path:'profileInfo',component:ProfileInfoComponent ,children: [
         {path:'infoDeployed',component:UserCardDeployComponent}
       ]}
