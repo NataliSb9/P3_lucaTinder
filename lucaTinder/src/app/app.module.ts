@@ -21,7 +21,6 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth/';
 import { environment } from 'src/environments/environment';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component';
-import { CandidatosComponent } from './components/candidatos/candidatos.component';
 import { HeaderComponent } from './components/header/header.component';
 
 
@@ -37,7 +36,6 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     UserCardComponent,
     UserCardDeployComponent,
-    CandidatosComponent,
     HeaderComponent,
   ],
   imports: [
