@@ -1,0 +1,185 @@
+$color-blue-indigo: #2e336a;
+$color-pink-light: #e91d62;
+$color-pink-dark: #c1165c;
+
+.card-container {
+  padding: 100px 0px;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+.profile-card{
+  position: relative;
+}
+
+.sector_status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 0px 30% 100% 0px;
+  background-color: $color-blue-indigo;
+  padding-left: 5px;
+  padding-bottom: 12px;
+  img{
+    height:28px;
+    width: 28px;
+    margin-top: 4px;
+    margin-left: 3px;
+    content: url("../../../assets/imgs/gratipay-brands-dp.svg");
+  }
+}
+
+.sector_status:hover{
+    background-color: $color-pink-dark;
+  img{
+    content: url("../../../assets/imgs/gratipay-brands.svg");
+  }
+}
+
+.profile-card {
+  max-width: 300px;
+  border-radius: 5px;
+  box-shadow: #7e1b5d 5px 5px, $color-pink-light 10px 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.profile-card img {
+  transition: all 0.25s linear;
+}
+
+.profile-card .profile-content {
+  border-left: 1px solid $color-pink-dark;
+  height: 110px;
+  position: relative;
+  padding: 15px 15px 5px 15px;
+}
+
+.profile-card .profile-name {
+  font-weight: bold;
+  position: absolute;
+  font-size: 1.5em !important;
+  text-shadow: 1px 1px 2px $color-pink-light;
+  left: 0px;
+  right: 0px;
+  top: -70px;
+  color: white;
+  font-size: 17px;
+}
+
+.profile-card .profile-name p {
+  margin-top: -4px;
+  font-weight: 600;
+  font-size: 0.5em;
+  letter-spacing: 1.5px;
+}
+
+.profile-card .profile-description {
+  color: $color-blue-indigo;
+  font-size: 0.9em;
+  padding: 10px;
+  font-weight: 700;
+}
+
+#like_link{
+  height: 28px !important;
+  width: 28px !important;
+  content: url("../../../assets/imgs/heart-solid-dp.svg");
+  margin-left: -5px;
+  margin-bottom: -6px;
+}
+
+#dislike_link{
+  height: 28px !important;
+  width: 28px !important;
+  content: url("../../../assets/imgs/heart-broken-solid-dp.svg");
+  margin-right: -5px;
+  margin-bottom: -6px;
+}
+
+#info_link{
+  margin-top: 5px;
+  height: 35px !important;
+  width: 35px !important;
+  content: url("../../../assets/imgs/eye-solid-dp.svg");
+}
+
+.profile-card .profile-content::before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  top: -10px;
+  left: 0px;
+  right: 0px;
+  background-color: $color-blue-indigo;
+  z-index: 0;
+  border-bottom: 4px solid $color-pink-dark;
+  transform: skewY(3deg);
+}
+
+
+.reactions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn_like_div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 0px 100% 30% 0px;
+  background-color: $color-blue-indigo;
+}
+
+
+.btn_dislike_div {
+  background-color: $color-blue-indigo;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 100% 0px 0px 30%;
+}
+
+.btn_dislike_div:hover{
+  background-color: $color-pink-dark;
+  #dislike_link{
+    content: url("../../../assets/imgs/heart-broken-solid.svg");
+  }
+}
+
+.btn_like_div:hover{
+  background-color: $color-pink-dark;
+  #like_link{
+    content: url("../../../assets/imgs/heart-solid.svg");
+  }
+}
+
+.btn-info_div {
+  background-color: $color-blue-indigo;
+  width: 80px;
+  height: 37px;
+  margin-top: 13px;
+  border-radius: 40px 40px 3px 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-info_div:hover {
+  background-color: $color-pink-dark;
+  display: flex;
+  #info_link{
+    content: url("../../../assets/imgs/eye-solid.svg");
+  }
+}
