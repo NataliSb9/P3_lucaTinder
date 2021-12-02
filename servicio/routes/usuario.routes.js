@@ -36,6 +36,7 @@ usuarioRoute.route('/usuario')
                 res.status(400).send('Error'+ err)
             }else{
                 res.status(200).send(usuario)
+                console.log("infoenviada")
             }
         }
     })
