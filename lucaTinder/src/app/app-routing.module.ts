@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component'; 
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
+import { ListaDislikesComponent } from './components/lista-dislikes/lista-dislikes.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,9 @@ const routes: Routes = [
       },
       {path:'profileInfo',component:ProfileInfoComponent ,children: [
         {path:'infoDeployed',component:UserCardDeployComponent}
-      ]}
+      ]},
+      {path:'listaDislikes',component:ListaDislikesComponent,
+      }
     ],
   },
 ];
