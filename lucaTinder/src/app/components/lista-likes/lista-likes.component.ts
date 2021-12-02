@@ -10,17 +10,31 @@ import { Usuario } from '../../models/usuario.model';
 export class ListaLikesComponent implements OnInit {
   mailUser:any =''
   currentUser!:Usuario
-  listaGustos!:String[]
-  listaQueridos!:Usuario[]
-
+  listaGustos:any[]=[]
+  listaQueridos:Usuario[]=[]
+  queridoActual!:Usuario
   constructor(private servicio:UsuarioService) { }
 
   ngOnInit(): void {
-   let mailPersona=localStorage.getItem('usuarioActual');
-   this.mailUser=mailPersona;
-   this.servicio.getInfoUsuario(this.mailUser).subscribe((data)=>{
-     console.log(data)})
-  }
+   this.mailUser=localStorage.getItem('usuarioActual');
+   this.servicio.getInfoUsuario(this.mailUser).subscribe((data:any)=>{
+    this.currentUser=this.servicio.convertirAUsuario(data[0]);
+    this.listaGustos=this.currentUser.arrLikes;
+    //console.log(this.listaGustos);
+    for (let j=0;j<this.listaGustos.length;j++){
+      this.servicio.getInfoUsuario(this.listaGustos[j]).subscribe((datos:any)=>{
+        //this.listaQueridos.push(this.servicio.convertirAUsuario(datos[0]))
+        this.queridoActual=this.servicio.convertirAUsuario(datos[0])
+        this.listaQueridos.push(this.queridoActual)
+        console.log(this.servicio.convertirAUsuario(datos[0]))
+        
+      })
+      
+    }
+    console.log(this.listaQueridos)
+   })
+    
+   
+  }  
 
-  
 }
