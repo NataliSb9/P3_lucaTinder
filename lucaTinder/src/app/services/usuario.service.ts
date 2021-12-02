@@ -27,7 +27,7 @@ export class UsuarioService {
   //Metodos para convertir la información que me llega de la API
   convertirAUsuario(resp: any): Usuario {
 
-    let usuario: Usuario = new Usuario(resp.name, resp.genero, resp.email,resp.age,resp.descripcion ,resp.gustos, resp.arrLike, resp.arrDislike,resp.prefGen, resp.foto)
+    let usuario: Usuario = new Usuario(resp.name, resp.genero, resp.email,resp.age,resp.descripcion ,resp.gustos, resp.arrLikes, resp.arrDislike,resp.prefGen, resp.foto)
 
     return usuario;
   }
@@ -35,7 +35,7 @@ export class UsuarioService {
   convertirAUsuarios(resp: any[]): Usuario[] {
     let usuarios: Usuario[] = []
     for (let i = 0; i < resp.length; i++) {
-      let usuario: Usuario = new Usuario(resp[i].name, resp[i].genero, resp[i].email,resp[i].age,resp[i].descripcion ,resp[i].gustos, resp[i].arrLike, resp[i].arrDislike,resp[i].prefGen, resp[i].foto);
+      let usuario: Usuario = new Usuario(resp[i].name, resp[i].genero, resp[i].email,resp[i].age,resp[i].descripcion ,resp[i].gustos, resp[i].arrLikes, resp[i].arrDislike,resp[i].prefGen, resp[i].foto);
 
       usuarios.push(usuario)
     }
@@ -45,4 +45,7 @@ export class UsuarioService {
   agregarUsuario(usuario:Usuario) {
     return this.http.post(this.urlApi + '/join', usuario)
   }
+
+  
+  
 }
