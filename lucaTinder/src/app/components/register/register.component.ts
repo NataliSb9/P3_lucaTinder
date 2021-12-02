@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
     { name: 'Pan', value: 'pan', checked: false },
     { name: 'Chocolate', value: 'chocolate', checked: false },
   ];
+  _id:number =0;
   name: string = '';
   email: string = '';
   pass: string = '';
@@ -63,6 +64,7 @@ export class RegisterComponent implements OnInit {
     this.getSelectedCheckBox();
 
     let usuario: Usuario = new Usuario(
+      this._id,
       this.name,
       this.genero,
       this.email,
