@@ -22,15 +22,14 @@ myEmail:any =  window.localStorage.getItem('usuarioActual')
 
 pulsaLike() {
 
-  console.log(this. email, this.myEmail)
-
 let myUsuario:UsuarioMatch = new UsuarioMatch(
   this.email,
   this.myEmail,
 )
+console.warn(myUsuario)
 
 
-  this.usuarioService.addLike(this.myEmail).subscribe((data) => {
+  this.usuarioService.addLike(myUsuario).subscribe((data) => {
     console.log(data)
   })
 }
