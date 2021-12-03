@@ -1,6 +1,7 @@
-const express = require('express');
+const express = require("express");
 //Importo la función de express que hace posible crear una aplicación express
 const app = express();
+
 
 // route() miniaplicación”, capaz solo de realizar funciones de middleware y enrutamiento. Cada aplicación Express tiene un enrutador de aplicaciones incorporado.
 //  Router() method that creates a new router object.
@@ -8,102 +9,120 @@ const usuarioRoute = express.Router();
 
 //importo el schema de la BBDD
 
-let Usuario = require('../model/schemaUsuario.js');
+let Usuario = require("../model/schemaUsuario.js");
 
 //PETICIONES
 
 //mostrar todos los usuarios:
-usuarioRoute.route('/')
-    .get((req,res,next)=>{
-        Usuario.find((error,data)=>{
-            if(error) {
-                return next(error);
-            } else {
-                res.json(data);
-            }
-        });
-        
+usuarioRoute.route("/").get((req, res, next) => {
+  Usuario.find((error, data) => {
+    if (error) {
+      return next(error);
+    } else {
+      res.json(data);
     }
-   
-);
+  });
+});
 
 //endpoint: traer la info del usuario
-usuarioRoute.route('/usuario')
-    .get((req,res)=>{
-        Usuario.find({email:req.query.email}, checkRespuesta);
-        function checkRespuesta(err,usuario){
-            if(err){
-                res.status(400).send('Error'+ err)
-            }else{
-                res.status(200).send(usuario)
-                console.log("infoenviada")
-            }
-        }
-    })
+usuarioRoute.route("/usuario").get((req, res) => {
+  Usuario.find({ email: req.query.email }, checkRespuesta);
+  function checkRespuesta(err, usuario) {
+    if (err) {
+      res.status(400).send("Error" + err);
+    } else {
+      res.status(200).send(usuario);
+      console.log("infoenviada");
+    }
+  }
+});
 
-    usuarioRoute.route('/usuario_id')
-    .get((req,res)=>{
-        Usuario.find({email:req.query.email},{_id: 1} , checkRespuesta);
-        function checkRespuesta(err,usuario){
-            if(err){
-                res.status(400).send('Error'+ err)
-            }else{
-                res.status(200).send(usuario)
-                console.log("infoenviada")
-            }
-        }
-    })
-
+usuarioRoute.route("/usuario_id").get((req, res) => {
+  Usuario.find({ email: req.query.email }, { _id: 1 }, checkRespuesta);
+  function checkRespuesta(err, usuario) {
+    if (err) {
+      res.status(400).send("Error" + err);
+    } else {
+      res.status(200).send(usuario);
+      console.log("infoenviada");
+    }
+  }
+});
 
 //Endpoint: Registro
 //con este endPoint registro al usuario
-usuarioRoute.route('/join')
-    .post(function (req, res, next) {
-        let usuarioNuevo = new Usuario({
-            id:req.body.id,
-            name: req.body.name,
-            gender: req.body.gender,
-            email: req.body.email,
-            age: req.body.age,
-            descripcion: req.body.descripcion,
-            gustos: req.body.gustos,
-            arrLikes:req.body.arrLikes,
-            arrDislike:req.body.arrDislike,
-            prefGen: req.body.prefGen,
-            foto: req.body.foto
-        })
-        usuarioNuevo.save(usuarioNuevo,checkRespuesta);
-        function checkRespuesta(err,usuarioNuevo){
-            if(err){
-            res.send(`Error:${err}`)
-            }else {
-                res.send(usuarioNuevo)
-                console.log(`usuario creado`)
-            }
-        }
+usuarioRoute.route("/join").post(function (req, res, next) {
+  let usuarioNuevo = new Usuario({
+    id: req.body.id,
+    name: req.body.name,
+    gender: req.body.gender,
+    email: req.body.email,
+    age: req.body.age,
+    descripcion: req.body.descripcion,
+    gustos: req.body.gustos,
+    arrLikes: req.body.arrLikes,
+    arrDislike: req.body.arrDislike,
+    prefGen: req.body.prefGen,
+    foto: req.body.foto,
+  });
+  usuarioNuevo.save(usuarioNuevo, checkRespuesta);
+  function checkRespuesta(err, usuarioNuevo) {
+    if (err) {
+      res.send(`Error:${err}`);
+    } else {
+      res.send(usuarioNuevo);
+      console.log(`usuario creado`);
     }
-);
+  }
+});
 
-
-
-//endpoint home:    
+//endpoint home:
 //mostrar 10 usuarios:
 
-usuarioRoute.route('/home')
-    .get( (req,res) => {
+usuarioRoute.route("/home").get((req, res) => {
+  Usuario.find({ genero: req.query.prefGen }, checkRespuesta).limit(10);
 
-    Usuario.find({genero:req.query.prefGen},checkRespuesta).limit(10);
-
-        function checkRespuesta(err,candidatos){
-            if(err){
-            res.status(400).send(`Error:${err}`)
-            }else {
-                res.status(200).send(candidatos)
-                console.log(`Usuarios enviados`)
-            }
-        }
+  function checkRespuesta(err, candidatos) {
+    if (err) {
+      res.status(400).send(`Error:${err}`);
+    } else {
+      res.status(200).send(candidatos);
+      console.log(`Usuarios enviados`);
     }
-);
+  }
+});
+
+// addLike 
+usuarioRoute.route('/home').put((req, res, next) => {
+  Usuario.findByIdAndUpdate(req.params.id, {
+      $set: req.body
+  }, (error, data) => {
+      if (error) {
+          return next(error);
+          console.log(error)
+      } else {
+          res.json(data)
+          console.log('Book updated successfully!')
+      }
+  })
+})
+
+// update FUNCIONA
+usuarioRoute.route("/usuario/update").put((req, res,) => {
+  data = req.body
+  console.log(data.email)
+  console.log(req.body)
+  Usuario.findOneAndUpdate({ email: req.query.email }, {$addToSet : { arrLikes : "crreo del opepe10"}},  checkRespuesta);
+  function checkRespuesta(err, usuario) {
+    if (err) {
+      res.status(400).send("Error" + err);
+    } else {
+      res.status(200).send(usuario);
+      console.log("Actualizado");
+    }
+  }
+});
+
 
 //endpoint: editar perfil de usuario
 module.exports = usuarioRoute;

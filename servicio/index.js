@@ -21,6 +21,13 @@ const usuarioRoute = require('./routes/usuario.routes');
 
 const app = express();
 
+// !parseo no funciona
+// For parsing application/json
+app.use(express.json());
+  
+// For parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
 //MIDLEWARE
 
 //Inicio la aplicación con express con la función
