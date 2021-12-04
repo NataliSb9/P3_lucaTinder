@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
 
       localStorage.setItem('usuarioActual', user);
-      // window.location.href = './home';
+      window.location.href = './home';
     } catch (e: any) {
       // alert(e.message);
       // console.log(e.message);
