@@ -14,6 +14,7 @@ import { ListaDislikesComponent } from './components/lista-dislikes/lista-dislik
 import { MatchesComponent } from './components/matches/matches.component';
 import { UsuarioService } from './services/usuario.service';
 import { HomeComponent } from './components/home/home.component';
+import { ConocePersonaComponent } from './components/conoce-persona/conoce-persona.component';
 
 //FIREN
 import { AngularFireModule } from '@angular/fire/compat';
@@ -23,7 +24,6 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
-import { ConocePersonaComponent } from './components/conoce-persona/conoce-persona.component';
 
 
 
