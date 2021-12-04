@@ -33,8 +33,13 @@ export class UsuarioService {
     let ruta:string= this.urlApi+"/conocepersonas"+ "?prefGen=" + prefGen;
     console.log(ruta)
     return this.http.get(ruta)
-   
-  }  
+  }
+  
+  // getDiezCandidatos(usuario: Usuario):any {
+  //   let ruta:string= this.urlApi+"/conocepersonas";
+  //   console.log(ruta)
+  //   return this.http.post(ruta,usuario)
+  // } 
   //Metodos para convertir la información que me llega de la API
   convertirAUsuarioDeUnArr(resp: any[]): Usuario {
     let usuario: Usuario = new Usuario(

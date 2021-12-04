@@ -14,52 +14,20 @@ export class ConocePersonaComponent implements OnInit {
   generoPreference!: string;
   personas: Usuario[] = [];
 
-  constructor( private usuarioService: UsuarioService) { 
+  constructor( private usuarioServicie: UsuarioService) { 
     this.email= localStorage.getItem('usuarioActual')
   }
 
-
-  myEmail: any = window.localStorage.getItem('usuarioActual');
-
-  pulsaLike(emailLike:string) {
-    let eslike = true;
-    this.email= emailLike;
-    console.log(this.email)
-    let myUsuario: UsuarioMatch = new UsuarioMatch(
-      this.email,
-      this.myEmail,
-      eslike
-    );
-    // console.warn(myUsuario);
-
-    this.usuarioService.addLikeOrDislike(myUsuario).subscribe((data) => {
-      console.log(data);
-    });
-  }
-
-  pulsaDislLike(emailDislike:string) {
-    let eslike = false;
-    this.email = emailDislike;
-    let myUsuario: UsuarioMatch = new UsuarioMatch(
-      this.email,
-      this.myEmail,
-      eslike
-    );
-
-    this.usuarioService.addLikeOrDislike(myUsuario).subscribe((data) => {
-      console.log(data);
-    });
-  }
-
+  
   ngOnInit(): void {
     if (typeof this.email === "string") {
-      this.usuarioService.getInfoUsuario(this.email).subscribe((data: any) => {
-        this.usuario = this.usuarioService.convertirAUsuarioDeUnArr(data);
+      this.usuarioServicie.getInfoUsuario(this.email).subscribe((data: any) => {
+        this.usuario = this.usuarioServicie.convertirAUsuarioDeUnArr(data);
         this.generoPreference = this.usuario.prefGen;
         console.log(this.generoPreference)
 
-        this.usuarioService.getDiezCandidatos(this.generoPreference).subscribe((data:any) =>{
-          this.personas = this.usuarioService.convertirAUsuarios(data)
+        this.usuarioServicie.getDiezCandidatos(this.generoPreference).subscribe((data:any) =>{
+          this.personas = this.usuarioServicie.convertirAUsuarios(data)
           console.log(this.personas)
         })
       })
