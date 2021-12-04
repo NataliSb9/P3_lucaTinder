@@ -1,4 +1,9 @@
-
-<div *ngFor = "let candidatos of personas" >
-    <app-user-card [usuario]="candidatos"></app-user-card>
+<div class="main-content">
+    <div class="container-conoce">
+        <div *ngFor = "let candidatos of personas" >
+            <app-user-card [usuario]="candidatos" class ="card-component"></app-user-card>
+        </div>
+    </div>
 </div>
+
+

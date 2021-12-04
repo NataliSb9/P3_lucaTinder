@@ -12,8 +12,8 @@ import{ConocePersonaComponent} from './components/conoce-persona/conoce-persona.
 
 const routes: Routes = [
   {
-    path: '',
-    component: LoginComponent,
+   path: '',
+  component: LoginComponent,
   },
   {
     path: 'register',
@@ -28,7 +28,9 @@ const routes: Routes = [
       {path:'profileInfo',component:ProfileInfoComponent ,children: [
         {path:'infoDeployed',component:UserCardDeployComponent}
       ]},
-      {path: 'conocepersona', component:ConocePersonaComponent}
+      {path: 'conocepersona', component:ConocePersonaComponent, children: [
+        {path:'Card',component:UserCardComponent,}
+      ]}
     ],
   },
 ];

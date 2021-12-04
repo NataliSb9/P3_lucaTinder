@@ -17,11 +17,14 @@ export class UserCardComponent implements OnInit {
     window.location.href = './usuario/profileInfo/infoDeployed';
   }
 
-  email: string = 'test21';
+  //debo incluir aqui el email 
+  email: string = '';
   myEmail: any = window.localStorage.getItem('usuarioActual');
 
-  pulsaLike() {
+  pulsaLike(emailLike:string) {
     let eslike = true;
+    this.email= emailLike;
+    console.log(this.email)
     let myUsuario: UsuarioMatch = new UsuarioMatch(
       this.email,
       this.myEmail,
@@ -34,8 +37,9 @@ export class UserCardComponent implements OnInit {
     });
   }
 
-  pulsaDislLike() {
+  pulsaDislLike(emailDislike:string) {
     let eslike = false;
+    this.email = emailDislike;
     let myUsuario: UsuarioMatch = new UsuarioMatch(
       this.email,
       this.myEmail,

@@ -1,0 +1,30 @@
+.container-conoce{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+.main-content{
+    margin-top: 5rem;
+    margin-right: 7rem;
+    margin-left: 7rem;
+}
+
+.card-component{
+    margin: 1rem 1.2rem 1rem 1.2rem;
+}
+
+
+
+
+
+
+@media (min-width: 2000px){
+    .main-content{
+        margin-top: 5rem;
+        margin-right: 10rem;
+        margin-left: 10rem;
+    }
+}

@@ -12,14 +12,16 @@
       <div class="profile-description">{{usuario.descripcion}}}
       </div>
       <div class="reactions">
-        <div class="btn btn_like_div" id="btn_like_div" (click)="pulsaLike()">
-          <a href="" title="like_link" id="like_link"><img class="icon-emogi-img" alt=""></a>
+        <div class="btn btn_like_div" id="btn_like_div" (click)="pulsaLike(usuario.email)">
+          <!-- no se puede usar un anchor en el tag de abajo porque recarga la aplicacion -->
+          <div href="#" title="like_link" id="like_link"><img class="icon-emogi-img" alt=""></div>
         </div>
         <div class="btn-info_div">
           <button (click)="redirectToInfo()" title="info_link" id="info_link"><img class="icon-emogi-img" alt=""></button>
         </div>
-        <div class="btn btn_dislike_div" id="btn_dislike_div" (click)="pulsaDislLike()">
-          <a href="" title="dislike_link" id="dislike_link"><img class="icon-emogi-img" alt=""></a>
+        <div class="btn btn_dislike_div" id="btn_dislike_div" (click)="pulsaDislLike(usuario.email)">
+          <!-- no se puede usar un anchor en el tag de abajo porque recarga la aplicacion -->
+          <div href="#" title="dislike_link" id="dislike_link"><img class="icon-emogi-img" alt=""></div>
         </div>
       </div>
     </div>
