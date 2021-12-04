@@ -93,6 +93,22 @@ usuarioRoute.route('/conocepersonas')
     }
 );
 
+// usuarioRoute.route('/conocepersonas')
+//     .post( (req,res) => {
+
+//     Usuario.find({genero:req.body.prefGen}, { arrLikes:{"$nor":[req.body.arrLikes]}},{arrDislike:{"$nor":[req.body.arrDislike]}},checkRespuesta).limit(10);
+
+//         function checkRespuesta(err,candidatos){
+//             if(err){
+//             res.status(400).send(`Error:${err}`)
+//             }else {
+//                 res.status(200).send(candidatos)
+//                 console.log(`Usuarios enviados`)
+//             }
+//         }
+//     }
+// );
+
 // Add likes o dislikes según el Boolean "esLike:" del modelo
 // UsuarioMatch
 
