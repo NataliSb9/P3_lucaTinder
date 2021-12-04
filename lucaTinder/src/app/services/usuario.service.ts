@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from '../models/usuario.model';
 
-import { UsuarioMatch } from '../models/usuarioMatch.model'
+import { UsuarioMatch } from '../models/usuarioMatch.model';
 
 //Me traigo el HTttpHeaders para luego poder hacer el delete con angular, mirar el siguiente recurso para poder eliminar con el body y no a través de parametros de un req.query
 //https://stackoverflow.com/questions/54017088/angular-7-http-delete-api-handle-body/54017685
@@ -109,8 +109,8 @@ export class UsuarioService {
     return this.http.post(this.urlApi + '/join', usuario);
   }
 
-  addLike(myUsuario: UsuarioMatch) {
+  addLikeOrDislike(myUsuario: UsuarioMatch) {
     console.log('hola desde servicio ' + myUsuario);
-    return this.http.put(this.urlApi + '/usuario/update' + '?email=' + myUsuario.myEmail, {body: myUsuario} );
+    return this.http.put(this.urlApi + '/usuario', myUsuario);
   }
 }

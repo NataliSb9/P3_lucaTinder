@@ -2,13 +2,11 @@ const express = require("express");
 //Importo la función de express que hace posible crear una aplicación express
 const app = express();
 
-
 // route() miniaplicación”, capaz solo de realizar funciones de middleware y enrutamiento. Cada aplicación Express tiene un enrutador de aplicaciones incorporado.
 //  Router() method that creates a new router object.
 const usuarioRoute = express.Router();
 
 //importo el schema de la BBDD
-
 let Usuario = require("../model/schemaUsuario.js");
 
 //PETICIONES
@@ -92,27 +90,22 @@ usuarioRoute.route("/home").get((req, res) => {
   }
 });
 
-// addLike 
-usuarioRoute.route('/home').put((req, res, next) => {
-  Usuario.findByIdAndUpdate(req.params.id, {
-      $set: req.body
-  }, (error, data) => {
-      if (error) {
-          return next(error);
-          console.log(error)
-      } else {
-          res.json(data)
-          console.log('Book updated successfully!')
-      }
-  })
-})
+// Add likes o dislikes según el Boolean "esLike:" del modelo
+// UsuarioMatch
 
-// update FUNCIONA
-usuarioRoute.route("/usuario/update").put((req, res,) => {
-  data = req.body
-  console.log(data.email)
-  console.log(req.body)
-  Usuario.findOneAndUpdate({ email: req.query.email }, {$addToSet : { arrLikes : "crreo del opepe10"}},  checkRespuesta);
+// - "Email" es el mail de la persona que le damos likes"
+// - "myEmail" es el mail del usuario de la tarjeta
+usuarioRoute.route("/usuario").put((req, res) => {
+  data = req.body;
+
+  if (data.esLike == true) {
+    console.log("Es like");
+    Usuario.findOneAndUpdate({ email: data.myEmail }, { $addToSet: { arrLikes: data.email } }, checkRespuesta);
+  } else {
+    console.log("Es Dislike");
+    Usuario.findOneAndUpdate({ email: data.myEmail }, { $addToSet: { arrDislike: data.email } }, checkRespuesta);
+  }
+
   function checkRespuesta(err, usuario) {
     if (err) {
       res.status(400).send("Error" + err);
@@ -122,7 +115,6 @@ usuarioRoute.route("/usuario/update").put((req, res,) => {
     }
   }
 });
-
 
 //endpoint: editar perfil de usuario
 module.exports = usuarioRoute;
