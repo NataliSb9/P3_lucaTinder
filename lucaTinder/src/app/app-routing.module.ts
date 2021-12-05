@@ -9,6 +9,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserCardDeployComponent } from './components/user-card-deploy/user-card-deploy.component'; 
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 import { ListaDislikesComponent } from './components/lista-dislikes/lista-dislikes.component';
+import { MatchesComponent } from './components/matches/matches.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,8 @@ const routes: Routes = [
         {path:'infoDeployed',component:UserCardDeployComponent}
       ]},
       {path:'listaDislikes',component:ListaDislikesComponent,
+      },
+      {path:'listaMatches',component:MatchesComponent,
       }
     ],
   },
