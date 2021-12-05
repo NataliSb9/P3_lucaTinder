@@ -109,7 +109,7 @@ $color-pink-dark: #c1165c;
   margin-top: 5px;
   height: 35px !important;
   width: 35px !important;
-  content: url("../../../assets/imgs/eye-solid-dp.svg");
+  content: url("../../../assets/imgs/heart-broken-solid-dp.svg");
 }
 
 .profile-card .profile-content::before {
@@ -183,4 +183,10 @@ $color-pink-dark: #c1165c;
   #info_link{
     content: url("../../../assets/imgs/eye-solid.svg");
   }
+}
+
+#profile_img{
+  height: 300px !important;
+  width: 300px !important;
+  border-left: 1px solid $color-blue-indigo;
 }

@@ -1,0 +1,56 @@
+.fondo-login {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #2e336a, #c1165c);
+}
+
+.card {
+  border: none;
+  border-radius: 14px;
+  background: #191919;
+}
+
+.box {
+  border-radius: 10px;
+  padding: 40px;
+  background: #191919;
+  text-align: center;
+  transition: 0.25s;
+}
+
+@media only screen and (min-width: 768px) {
+  .box {
+    width: 500px;
+    padding: 40px;
+  }
+}
+.box h1 {
+  color: #c1165c;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #2e336a;
+}
+
+.divider {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  height: 150px;
+}
+
+.register-soy, .register-busco {
+  margin: 20px auto;
+  padding: 0 100px;
+}/*# sourceMappingURL=login.component.css.map */
