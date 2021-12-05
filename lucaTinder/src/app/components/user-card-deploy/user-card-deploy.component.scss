@@ -5,10 +5,11 @@ $color-pink-dark: #c1165c;
 .card {
   float: left;
   border-radius: 5px;
+  width: 80vw;
   box-shadow: #7e1b5d 5px 5px, $color-pink-light 10px 10px;
   overflow: hidden;
   position: relative;
-  margin: 10px auto;
+  margin: 2vh 10vw;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -64,10 +65,9 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  ;
   justify-content: center;
   flex-wrap: wrap;
-  margin-left: 40px;
+  margin-left:4vw;
   padding: 20px 10px 20px 0px;
   width: 500px;
 }
@@ -129,7 +129,7 @@ h2 {
 }
 
 .chat_link:hover {
-  background-color: $color-pink-dark;
+  background-color: $color-pink-light;
   color: white;
 
   .chat_img{
