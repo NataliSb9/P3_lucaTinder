@@ -24,9 +24,12 @@ export class MatchesComponent implements OnInit {
     console.log(this.listaGustos);
     for (let j=0;j<this.listaGustos.length;j++){
       this.servicio.getInfoUsuario(this.listaGustos[j]).subscribe((datos:any)=>{
-        //this.listaMatches.push(this.servicio.convertirAUsuario(datos[0]))
-        this.queridoActual=this.servicio.convertirAUsuario(datos[0])
-        this.listaMatches.push(this.queridoActual)
+        this.queridoActual=this.servicio.convertirAUsuario(datos[0]);
+        for(let k=0; k<this.queridoActual.arrLikes.length; k++){
+          if(this.queridoActual.arrLikes[k] == this.mailUser){
+            this.listaMatches.push(this.queridoActual);
+          }
+        }
       }) 
     }
     console.log(this.listaMatches)
