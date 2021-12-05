@@ -8,10 +8,11 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class UserCardComponent implements OnInit {
   @Input() usuario:any; 
+  @Input() btnMostrador:any;
   constructor() { }
 
 redirectToInfo(){
-  window.location.href = './usuario/profileInfo/infoDeployed';
+  window.location.href = './home/profileInfo/infoDeployed';
 }
 
 
