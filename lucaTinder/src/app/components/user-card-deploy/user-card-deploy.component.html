@@ -1,22 +1,15 @@
 <div class='card'>
   <div class='separator-blue-slash'></div>
-  <img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg" alt="">
+  <img src="{{usuario.foto}}" alt="">
   <div class="contenido_usuario">
     <div class="name_mail">
-      <h2>Jhonny Sins 25</h2>
-      <p class="correo">big.berenjena@example.com</p>
+      <h2>{{usuario.name}}</h2>
+      <p class="correo">{{usuario.email}}</p>
       <div class="img_intersex"></div>
     </div>
-    <p class="descripcion">¿No tendremos un amigo en común que pueda presentarnos?</p>
-    <div class="gustos">
-      <div class="gusto">Socialismo</div>
-      <div class="gusto">Nudismo</div>
-      <div class="gusto">Licantropia</div>
-      <div class="gusto">Canibalismo</div>
-      <div class="gusto">K-Pop</div>
-      <div class="gusto">Hello Kitty</div>
-      <div class="gusto">Perico</div>
-      <div class="gusto">Tattoos</div>
+    <p class="descripcion">{{usuario.descripcion}}</p>
+    <div class="gustos" >
+      <div class="gusto" *ngFor="let j of usuario.gustos">{{j}}</div>
     </div>
     <div class="div_chat">
       <a class="chat_link d-flex">

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input} from '@angular/core';
 
 
 @Component({
@@ -9,14 +9,19 @@ import { Component, OnInit,Input } from '@angular/core';
 export class UserCardComponent implements OnInit {
   @Input() usuario:any; 
   @Input() btnMostrador:any;
-  constructor() { }
+  public usuarioExportable!:any
+  constructor() {}
 
-redirectToInfo(){
-  window.location.href = './home/profileInfo/infoDeployed';
+public redirectToInfo():void {
+  window.location.href = './home/profileInfo'; 
+  localStorage.setItem('perfilVisitable', this.usuario.email);
 }
 
 
-  ngOnInit(): void {
+ ngOnInit(): void {
+   this.usuarioExportable=this.usuario 
+    //console.log(this.usuario,this.usuarioExportable)
   }
+
 
 }

@@ -14,6 +14,7 @@ import { ListaDislikesComponent } from './components/lista-dislikes/lista-dislik
 import { MatchesComponent } from './components/matches/matches.component';
 import { UsuarioService } from './services/usuario.service';
 import { HomeComponent } from './components/home/home.component';
+import { ProfileServiceService } from './services/profile-service.service';
 
 //FIREN
 import { AngularFireModule } from '@angular/fire/compat';
@@ -50,7 +51,7 @@ import { ProfileInfoComponent } from './components/profile-info/profile-info.com
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService,ProfileServiceService,UserCardComponent],
   bootstrap: [AppComponent]
 })
 

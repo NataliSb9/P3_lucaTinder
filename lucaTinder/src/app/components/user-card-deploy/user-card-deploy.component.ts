@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-card-deploy',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-card-deploy.component.scss']
 })
 export class UserCardDeployComponent implements OnInit {
+  @Input() usuario:any;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.usuario)
   }
+
+
 
 }
