@@ -19,32 +19,21 @@ export class UserCardComponent implements OnInit {
 
   email: string = 'test21';
   myEmail: any = window.localStorage.getItem('usuarioActual');
+  checkIfIsLike: boolean = true;
 
-  pulsaLike() {
-    let eslike = true;
+  pulsaLikeDislike(checkIfIsLike: boolean) {
     let myUsuario: UsuarioMatch = new UsuarioMatch(
       this.email,
       this.myEmail,
-      eslike
-    );
-    // console.warn(myUsuario);
-
-    this.usuarioService.addLikeOrDislike(myUsuario).subscribe((data) => {
-      console.log(data);
-    });
-  }
-
-  pulsaDislLike() {
-    let eslike = false;
-    let myUsuario: UsuarioMatch = new UsuarioMatch(
-      this.email,
-      this.myEmail,
-      eslike
+      checkIfIsLike
     );
 
     this.usuarioService.addLikeOrDislike(myUsuario).subscribe((data) => {
       console.log(data);
     });
+
+    // Ayudante para Test
+    this.checkIfIsLike = checkIfIsLike;
   }
 
   ngOnInit(): void {}
