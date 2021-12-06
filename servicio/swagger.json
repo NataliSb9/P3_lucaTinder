@@ -55,14 +55,14 @@
               }
             }
           },
-          "400":{
+          "400": {
             "description": "unexpected error"
           }
         }
 
       }
     },
-    "/usuario":{
+    "/usuario": {
       "put": {
         "summary": "add email of another users inside the array arrLikes or arrDislike",
         "consumes": "application/json",
@@ -74,7 +74,7 @@
           "required": "true",
           "type": "string"
         },
-        "responses":{
+        "responses": {
           "200": {
             "description": "Actualizado"
           },
@@ -84,8 +84,28 @@
         }
       }
     },
-    "/join":{
-      
+    "/join": {
+      "post": {
+        "summary": "add a new user from register",
+        "consumes": "application/json",
+        "produces": "application/json",
+        "parameters": {
+          "name": "body",
+          "in": "body",
+          "description": "Usuario object that needs to be added to the Personas collection",
+          "required": "true",
+          "type": "string"
+        },
+        "responses": {
+          "200": {
+            "description": "usuario creado"
+          },
+          "400": {
+            "description": "error"
+          }
+        }
+      }
+
     }
   }
 }
