@@ -1,0 +1,62 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Lucatinder API",
+    "description": "API REST to Lucatinder app",
+    "license": {
+      "name": "MIT ----MIRAR BIEN QUE TENGO QUE OPONER PORQUE ES OBLIGATORIO",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "servers": {
+      "url": "VER A QUÉ SE REFIERE CON ESTE APARTADO OBLIGATORIO"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/lucatinder",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Returns all user from the Mongo Atlas data base Personas",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "return all documemtes from data base Personas",
+            "schema": {
+              "type": "array",
+              "items": "objects"
+            }
+          }
+        }
+      }
+    },
+    "/usuario": {
+      "get": {
+        "description": "Return one user from the Mongo Atlas data base Personas",
+        "summary": "find usuarios by email",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+              "description": "array with one usuario",
+              "content": {
+                "application/json" :{
+                  "schema":{
+                    "type":"array",
+                    "items": {
+                      "$ref": "#/components/schemas/pet"
+                    }
+                  }
+                }
+              }
+          }
+        },
+        "parameters": [{
+          "name": "email"
+        }]
+      }
+    }
+  }
+}

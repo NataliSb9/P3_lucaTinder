@@ -6,6 +6,9 @@ const app = express();
 //  Router() method that creates a new router object.
 const usuarioRoute = express.Router();
 
+
+
+
 //importo el schema de la BBDD
 let Usuario = require("../model/schemaUsuario.js");
 
@@ -35,18 +38,21 @@ usuarioRoute.route("/usuario").get((req, res) => {
   }
 });
 
-usuarioRoute.route("/usuario_id").get((req, res) => {
-  Usuario.find({ email: req.query.email }, { _id: 1 }, checkRespuesta);
-  function checkRespuesta(err, usuario) {
-    if (err) {
-      res.status(400).send("Error" + err);
-    } else {
-      res.status(200).send(usuario);
-      console.log("infoenviada");
-    }
-  }
-});
+//Para qué sirve este endpoint de aquí abajo?
 
+// usuarioRoute.route("/usuario_id").get((req, res) => {
+//   Usuario.find({ email: req.query.email }, { _id: 1 }, checkRespuesta);
+//   function checkRespuesta(err, usuario) {
+//     if (err) {
+//       res.status(400).send("Error" + err);
+//     } else {
+//       res.status(200).send(usuario);
+//       console.log("infoenviada");
+//     }
+//   }
+// });
+
+//Cambiar el endpoint y poner /usuario
 //Endpoint: Registro
 //con este endPoint registro al usuario
 usuarioRoute.route("/join").post(function (req, res, next) {
@@ -114,6 +120,7 @@ usuarioRoute.route('/conocepersonas')
 
 // - "Email" es el mail de la persona que le damos likes"
 // - "myEmail" es el mail del usuario de la tarjeta
+
 usuarioRoute.route("/usuario").put((req, res) => {
   data = req.body;
 
