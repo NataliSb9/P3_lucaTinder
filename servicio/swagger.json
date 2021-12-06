@@ -105,7 +105,35 @@
           }
         }
       }
+    },
+    "/conocepersonas/{prefGen}": {
+      "get": {
+        "description": "This endpoint returns 10 usuarios according to genre preference of the user",
+        "summary": "return 10 users",
+        "produces": ["application/json"],
+        "parameters": [{
+          "name": "prefgen",
+          "in": "query",
+          "description": "genre preference to find 10 users",
+          "required": "true",
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "description": "Usuarios enviados",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "NO ENTIENDO BIEN ESTO ----> #/definitions/Pet"
+              }
+            }
+          },
+          "400": {
+            "description": "unexpected error"
+          }
+        }
 
+      }
     }
   }
 }
