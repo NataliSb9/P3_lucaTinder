@@ -54,6 +54,11 @@ app.use(cors());
 
 app.use("/lucatinder", usuarioRoute);
 
+//codigo para gregar swagger
+
+const swaggerUi = require("swagger-ui-express");
+swaggerDocument = require("./swagger.json");
+
 const puerto = 3000;
 
 app.listen(puerto, () => {
