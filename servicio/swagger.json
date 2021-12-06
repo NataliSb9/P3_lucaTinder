@@ -5,11 +5,7 @@
     "title": "Lucatinder API",
     "description": "API REST to Lucatinder app",
     "license": {
-      "name": "MIT ----MIRAR BIEN QUE TENGO QUE OPONER PORQUE ES OBLIGATORIO",
-      "url": "https://opensource.org/licenses/MIT"
-    },
-    "servers": {
-      "url": "VER A QUÉ SE REFIERE CON ESTE APARTADO OBLIGATORIO"
+      "name": "MIT"
     }
   },
   "host": "localhost:3000",
@@ -18,22 +14,7 @@
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
-    "/": {
-      "get": {
-        "description": "Returns all user from the Mongo Atlas data base Personas",
-        "produces": ["application/json"],
-        "responses": {
-          "200": {
-            "description": "return all documemtes from data base Personas",
-            "schema": {
-              "type": "array",
-              "items": "objects"
-            }
-          }
-        }
-      }
-    },
-    "/usuario/{id}": {
+    "/usuario": {
       "get": {
         "description": "Return one user from the Mongo Atlas data base Personas",
         "summary": "find usuarios by email",
@@ -51,7 +32,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "NO ENTIENDO BIEN ESTO ----> #/definitions/Pet"
+                "$ref": "#/components/Usuario"
               }
             }
           },
@@ -60,9 +41,7 @@
           }
         }
 
-      }
-    },
-    "/usuario": {
+      },
       "put": {
         "summary": "add email of another users inside the array arrLikes or arrDislike",
         "consumes": "application/json",
@@ -98,7 +77,10 @@
         },
         "responses": {
           "200": {
-            "description": "usuario creado"
+            "description": "usuario creado",
+            "schema": {
+              "$ref": "#/components/Usuario"
+            }
           },
           "400": {
             "description": "error"
@@ -106,7 +88,7 @@
         }
       }
     },
-    "/conocepersonas/{prefGen}": {
+    "/conocepersonas": {
       "get": {
         "description": "This endpoint returns 10 usuarios according to genre preference of the user",
         "summary": "return 10 users",
@@ -124,7 +106,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "NO ENTIENDO BIEN ESTO ----> #/definitions/Pet"
+                "$ref": "#/components/Usuario"
               }
             }
           },
@@ -133,6 +115,56 @@
           }
         }
 
+      }
+    }
+  },
+  "components": {
+    "Usuario": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "genero": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "pass": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "descripcion": {
+          "type": "string"
+        },
+        "gustos": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "arrLikes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "disLike": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefGen": {
+          "type": "string"
+        },
+        "foto": {
+          "type": "string"
+        }
       }
     }
   }

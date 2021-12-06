@@ -14,17 +14,6 @@ let Usuario = require("../model/schemaUsuario.js");
 
 //PETICIONES
 
-//mostrar todos los usuarios:
-usuarioRoute.route("/").get((req, res, next) => {
-  Usuario.find((error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      res.json(data);
-    }
-  });
-});
-
 //endpoint: traer la info del usuario
 usuarioRoute.route("/usuario").get((req, res) => {
   Usuario.find({ email: req.query.email }, checkRespuesta);
