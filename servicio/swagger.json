@@ -33,22 +33,59 @@
         }
       }
     },
-    "/usuario": {
+    "/usuario/{id}": {
       "get": {
         "description": "Return one user from the Mongo Atlas data base Personas",
         "summary": "find usuarios by email",
         "produces": ["application/json"],
-        "parameters":[
-          {
-            "name": "email",
-            "in": "query",
-            "description": "email to find user",
-            "required": "true",
-            "type": "string"
+        "parameters": [{
+          "name": "email",
+          "in": "query",
+          "description": "email to find user",
+          "required": "true",
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "description": "Usuario response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "NO ENTIENDO BIEN ESTO ----> #/definitions/Pet"
+              }
+            }
+          },
+          "400":{
+            "description": "unexpected error"
           }
-        ]
+        }
 
       }
+    },
+    "/usuario":{
+      "put": {
+        "summary": "add email of another users inside the array arrLikes or arrDislike",
+        "consumes": "application/json",
+        "produces": "application/json",
+        "parameters": {
+          "name": "body",
+          "in": "body",
+          "description": "email of the candidate who likes you or dislikes you that to be added to arrLikes or arrDislike",
+          "required": "true",
+          "type": "string"
+        },
+        "responses":{
+          "200": {
+            "description": "Actualizado"
+          },
+          "400": {
+            "description": "error"
+          }
+        }
+      }
+    },
+    "/join":{
+      
     }
   }
 }
