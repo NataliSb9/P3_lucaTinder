@@ -38,24 +38,16 @@
         "description": "Return one user from the Mongo Atlas data base Personas",
         "summary": "find usuarios by email",
         "produces": ["application/json"],
-        "responses": {
-          "200": {
-              "description": "array with one usuario",
-              "content": {
-                "application/json" :{
-                  "schema":{
-                    "type":"array",
-                    "items": {
-                      "$ref": "#/components/schemas/pet"
-                    }
-                  }
-                }
-              }
+        "parameters":[
+          {
+            "name": "email",
+            "in": "query",
+            "description": "email to find user",
+            "required": "true",
+            "type": "string"
           }
-        },
-        "parameters": [{
-          "name": "email"
-        }]
+        ]
+
       }
     }
   }
