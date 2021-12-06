@@ -1,14 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+// HttpClient Error
+import { HttpClientModule } from '@angular/common/http';
+
 import { UserCardComponent } from './user-card.component';
 
-describe('UserCardComponent', () => {
+fdescribe('UserCardComponent', () => {
   let component: UserCardComponent;
   let fixture: ComponentFixture<UserCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserCardComponent ]
+      declarations: [ UserCardComponent ],
+      imports: [HttpClientModule],
     })
     .compileComponents();
   });
