@@ -59,7 +59,7 @@ app.use("/lucatinder", usuarioRoute);
 const swaggerUi = require("swagger-ui-express");
 swaggerDocument = require("./swagger.json");
 
-
+//endpoint donde se puede ver la interfaz de usuario de Swagger
 app.use(
   '/api-docs',
   swaggerUi.serve, 
