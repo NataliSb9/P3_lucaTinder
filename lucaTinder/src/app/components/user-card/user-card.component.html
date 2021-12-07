@@ -24,7 +24,7 @@
         <h2 class="name">{{usuario.name}}</h2>
       <h3 class="edad">Edad {{usuario.age}}</h3>
       </div>
-      <div class="sex"></div>    
+      <div class="sex" [ngStyle]="{'background-image': getUrlSex()}"></div>    
     </div>
     <div class="correo cont-corr-tel">
       <div class="back-logo logo-correo"></div>
