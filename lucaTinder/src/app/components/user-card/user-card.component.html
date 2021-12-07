@@ -1,5 +1,3 @@
-<!--*ngIf="btnMostrador !== false"-->
-
 <div class="tp-box" [@flipState]="flip">
   <div class="tp-box__side tp-box__front">
       <div class="img-nombre-edad" [ngStyle]="{'background-image': getUrl()}">
@@ -9,14 +7,14 @@
         <h3 class="descripcion">{{usuario.descripcion}}</h3>
       </div>
       <div class="div-buttons">
-        <div class="btn btn_like_div" id="btn_like_div" *ngIf="btnMostrador !== false">
-          <a href="" title="like_link" class= "btn-inner" id="like_link"><div class="btn_imagen_inner b_dislike" alt=""></div></a>
+        <div class="btn btn_like_div" id="btn_like_div" *ngIf="btnMostrador !== false" (click)="pulsaLikeDislike(false, usuario.email)" >
+          <a title="dislike_link" class= "btn-inner" id="like_link"><div class="btn_imagen_inner b_dislike" alt=""></div></a>
         </div>
         <div class="btn flip_front-div" (click)="toggleFlip()">
           <a title="flip_front" id="flip_front"><div class="btn_imagen_inner b_front" alt=""></div></a>
         </div>
-        <div class="btn btn_dislike_div" id="btn_dislike_div" *ngIf="btnMostrador !== false">
-          <a href="" title="dislike_link" id="dislike_link"><div class="btn_imagen_inner b_like" alt=""></div></a>
+        <div class="btn btn_dislike_div" id="btn_dislike_div" *ngIf="btnMostrador !== false" (click)="pulsaLikeDislike(true, usuario.email)">
+          <a  title="like_link" id="dislike_link"><div class="btn_imagen_inner b_like" alt=""></div></a>
         </div>
       </div>
   </div>
@@ -31,10 +29,6 @@
     <div class="correo cont-corr-tel">
       <div class="back-logo logo-correo"></div>
       <h3 class="inner_h3">{{usuario.email}}</h3>
-    </div>
-    <div class="telefono cont-corr-tel">
-      <div class="back-logo logo-tlfn"></div>
-      <h3 class="inner_h3">+34658972112</h3>
     </div>
     <div class=gustos>
       <h4 class="gusto" *ngFor="let gusto of this.usuario.gustos">{{gusto}}</h4>

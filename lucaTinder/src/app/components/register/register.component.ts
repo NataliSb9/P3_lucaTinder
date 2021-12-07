@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
       this.registraUsuarioDDBB()
       alert('Te has registrado');
       localStorage.setItem('usuarioActual', emailFire);
-      window.location.href = './home';
+      window.location.href = './home/conocepersona';
     } catch (e: any) {
       alert(e.message);
     }
@@ -78,7 +78,7 @@ export class RegisterComponent implements OnInit {
     );
 
     this.usuarioService.agregarUsuario(usuario).subscribe((data) => {
-      console.log(data);
+     
     });
   }
   constructor(
@@ -87,6 +87,6 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // console.log(this.gustos);
+    
   }
 }

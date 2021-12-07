@@ -1,5 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
+import { UsuarioMatch } from 'src/app/models/usuarioMatch.model';
+import { UsuarioService } from '../../services/usuario.service';
 
 
 @Component({
@@ -23,7 +25,7 @@ export class UserCardComponent implements OnInit {
   @Input() usuario:any; 
   @Input() btnMostrador:any;
   public usuarioExportable!:any
-  constructor() {}
+  constructor(private usuarioService: UsuarioService) {}
 
 // redirectToInfo(){
 //   window.location.href = './home/profileInfo/infoDeployed';
@@ -34,7 +36,7 @@ export class UserCardComponent implements OnInit {
 
  ngOnInit(): void {
    this.usuarioExportable=this.usuario 
-    //console.log(this.usuario,this.usuarioExportable)
+   
   }
 
   flip: string = 'inactive';
@@ -44,8 +46,27 @@ export class UserCardComponent implements OnInit {
   }
 
   getUrl(){
-    console.log("foto: "+this.usuario.foto);
+   
     return "url("+this.usuario.foto+")";
   }
 
+  //debo incluir aqui el email 
+  email: string = '';
+  myEmail: any = window.localStorage.getItem('usuarioActual');
+  checkIfIsLike: boolean = true;
+
+  pulsaLikeDislike(checkIfIsLike: boolean, emailLikeDislike: string) {
+    let myUsuario: UsuarioMatch = new UsuarioMatch(
+      this.email = emailLikeDislike,
+      this.myEmail,
+      checkIfIsLike
+    );
+
+    this.usuarioService.addLikeOrDislike(myUsuario).subscribe((data) => {
+     
+    });
+
+    // Ayudante para Test
+    this.checkIfIsLike = checkIfIsLike;
+  }
 }

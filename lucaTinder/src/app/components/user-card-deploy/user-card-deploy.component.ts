@@ -11,7 +11,7 @@ export class UserCardDeployComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.usuario)
+  
   }
 
 

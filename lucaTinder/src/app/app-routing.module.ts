@@ -6,13 +6,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { ListaLikesComponent } from './components/lista-likes/lista-likes.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
+import{ConocePersonaComponent} from './components/conoce-persona/conoce-persona.component';
 import { ListaDislikesComponent } from './components/lista-dislikes/lista-dislikes.component';
 import { MatchesComponent } from './components/matches/matches.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: LoginComponent,
+   path: '',
+  component: LoginComponent,
   },
   {
     path: 'register',
@@ -24,10 +25,9 @@ const routes: Routes = [
       },
       {path:'profileInfo',component:ProfileInfoComponent
     },
-      {path:'listaDislikes',component:ListaDislikesComponent,
-      },
-      {path:'listaMatches',component:MatchesComponent,
-      }
+      {path:'listaDislikes',component:ListaDislikesComponent},
+      {path:'listaMatches',component:MatchesComponent},
+      {path: 'conocepersona', component:ConocePersonaComponent}
     ],
   },
 ];

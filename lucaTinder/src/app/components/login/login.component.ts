@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -7,21 +8,37 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(public auth: AuthService) {}
+  constructor(
+    public auth: AuthService,
+    private usuarioService: UsuarioService
+  ) {}
 
-
+  emailActual: string = '';
+  usuario: any;
 
   async login(user: string, pass: string) {
     try {
       await this.auth.login(user, pass);
-      
-      
-      
+      // alert('Has Entrado');
+
+      // alert('Has Entrado');
+
       localStorage.setItem('usuarioActual', user);
-      window.location.href = './home';
+
+      
+      this.emailActual = user;
+      // window.location.href = './usuario';
+      this.usuarioService
+        .getInfoUsuario(this.emailActual)
+        .subscribe((data: any) => {
+          this.usuario = this.usuarioService.convertirAUsuarioDeUnArr(data);
+          localStorage.setItem('idusuarioActual', this.usuario._id);
+        });
+
+      window.location.href = './home/conocepersona';
     } catch (e: any) {
       // alert(e.message);
-      // console.log(e.message);
+     
       if (
         e.message ==
         'Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found).'
@@ -43,8 +60,5 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 }

@@ -21,7 +21,7 @@ export class ListaDislikesComponent implements OnInit {
    this.servicio.getInfoUsuario(this.mailUser).subscribe((data:any)=>{
     this.currentUser=this.servicio.convertirAUsuario(data[0]);
     this.listaNoGustos=this.currentUser.arrDislikes;
-    console.log(this.listaNoGustos);
+   
     for (let j=0;j<this.listaNoGustos.length;j++){
       this.servicio.getInfoUsuario(this.listaNoGustos[j]).subscribe((datos:any)=>{
         //this.listaNoQueridos.push(this.servicio.convertirAUsuario(datos[0]))
@@ -31,7 +31,7 @@ export class ListaDislikesComponent implements OnInit {
       })
       
     }
-    console.log(this.listaNoQueridos)
+   
    })
   }
 }

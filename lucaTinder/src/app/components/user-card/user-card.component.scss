@@ -1,3 +1,4 @@
+
 /*.tp-wrapper {
     -webkit-perspective: 800px;
             perspective: 800px;
@@ -193,21 +194,10 @@
     }
   }
 
-  .telefono {
-    height: 65px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    h3 {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-  }
+  
 
   .gustos {
-    height: 170px;
+    height: 235px;
     width: 300px;
     display: flex;
     flex-direction: row;
