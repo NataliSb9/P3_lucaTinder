@@ -31,13 +31,12 @@ export class UsuarioService {
 
   getDiezCandidatos(prefGen: string):any {
     let ruta:string= this.urlApi+"/conocepersonas"+ "?prefGen=" + prefGen;
-    console.log(ruta)
+    
     return this.http.get(ruta)
   }
   
   // getDiezCandidatos(usuario: Usuario):any {
   //   let ruta:string= this.urlApi+"/conocepersonas";
-  //   console.log(ruta)
   //   return this.http.post(ruta,usuario)
   // } 
   //Metodos para convertir la información que me llega de la API
@@ -117,7 +116,7 @@ export class UsuarioService {
   }
 
   addLikeOrDislike(myUsuario: UsuarioMatch) {
-    console.log('hola desde servicio ' + myUsuario);
+    
     return this.http.put(this.urlApi + '/usuario', myUsuario);
   }
 }

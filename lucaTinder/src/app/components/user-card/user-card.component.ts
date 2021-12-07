@@ -36,7 +36,7 @@ export class UserCardComponent implements OnInit {
 
  ngOnInit(): void {
    this.usuarioExportable=this.usuario 
-    //console.log(this.usuario,this.usuarioExportable)
+   
   }
 
   flip: string = 'inactive';
@@ -46,7 +46,7 @@ export class UserCardComponent implements OnInit {
   }
 
   getUrl(){
-    console.log("foto: "+this.usuario.foto);
+   
     return "url("+this.usuario.foto+")";
   }
 
@@ -63,7 +63,7 @@ export class UserCardComponent implements OnInit {
     );
 
     this.usuarioService.addLikeOrDislike(myUsuario).subscribe((data) => {
-      console.log(data);
+     
     });
 
     // Ayudante para Test

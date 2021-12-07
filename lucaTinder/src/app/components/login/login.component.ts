@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
       localStorage.setItem('usuarioActual', user);
 
-      //console.log(user);
+      
       this.emailActual = user;
       // window.location.href = './usuario';
       this.usuarioService
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       window.location.href = './home/conocepersona';
     } catch (e: any) {
       // alert(e.message);
-      // console.log(e.message);
+     
       if (
         e.message ==
         'Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found).'

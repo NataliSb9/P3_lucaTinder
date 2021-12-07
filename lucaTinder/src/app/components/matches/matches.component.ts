@@ -21,7 +21,7 @@ export class MatchesComponent implements OnInit {
    this.servicio.getInfoUsuario(this.mailUser).subscribe((data:any)=>{
     this.currentUser=this.servicio.convertirAUsuario(data[0]);
     this.listaGustos=this.currentUser.arrLikes;
-    console.log(this.listaGustos);
+  
     for (let j=0;j<this.listaGustos.length;j++){
       this.servicio.getInfoUsuario(this.listaGustos[j]).subscribe((datos:any)=>{
         this.queridoActual=this.servicio.convertirAUsuario(datos[0]);
@@ -32,7 +32,7 @@ export class MatchesComponent implements OnInit {
         }
       }) 
     }
-    console.log(this.listaMatches)
+  
    })
   }  
 }

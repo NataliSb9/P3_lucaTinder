@@ -78,7 +78,7 @@ export class RegisterComponent implements OnInit {
     );
 
     this.usuarioService.agregarUsuario(usuario).subscribe((data) => {
-      console.log(data);
+     
     });
   }
   constructor(
@@ -87,6 +87,6 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // console.log(this.gustos);
+    
   }
 }

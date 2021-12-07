@@ -23,7 +23,6 @@ arrUserToShow:Usuario[]=[]
     })
  
     
-     console.log(this.arrUserToShow)
     
    }  
 
