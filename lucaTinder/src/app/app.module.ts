@@ -16,6 +16,7 @@ import { UsuarioService } from './services/usuario.service';
 import { HomeComponent } from './components/home/home.component';
 import { ConocePersonaComponent } from './components/conoce-persona/conoce-persona.component';
 
+
 //FIREN
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth/';
@@ -52,7 +53,7 @@ import { ProfileInfoComponent } from './components/profile-info/profile-info.com
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService,UserCardComponent],
   bootstrap: [AppComponent]
 })
 

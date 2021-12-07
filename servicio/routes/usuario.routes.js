@@ -27,19 +27,6 @@ usuarioRoute.route("/usuario").get((req, res) => {
   }
 });
 
-//Para qué sirve este endpoint de aquí abajo?
-
-// usuarioRoute.route("/usuario_id").get((req, res) => {
-//   Usuario.find({ email: req.query.email }, { _id: 1 }, checkRespuesta);
-//   function checkRespuesta(err, usuario) {
-//     if (err) {
-//       res.status(400).send("Error" + err);
-//     } else {
-//       res.status(200).send(usuario);
-//       console.log("infoenviada");
-//     }
-//   }
-// });
 
 //Cambiar el endpoint y poner /usuario
 //Endpoint: Registro
@@ -48,7 +35,7 @@ usuarioRoute.route("/join").post(function (req, res, next) {
   let usuarioNuevo = new Usuario({
     id: req.body.id,
     name: req.body.name,
-    gender: req.body.gender,
+    genero: req.body.genero,
     email: req.body.email,
     age: req.body.age,
     descripcion: req.body.descripcion,

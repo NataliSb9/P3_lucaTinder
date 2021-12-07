@@ -1,7 +1,2 @@
-
-
-
-
-
-
-<router-outlet></router-outlet>
+<div *ngFor="let i of this.arrUserToShow" class="cardDiv">
+<app-user-card-deploy [usuario]="i" > </app-user-card-deploy></div>

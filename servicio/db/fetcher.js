@@ -11,23 +11,23 @@
 
 const fetch = require('node-fetch');
 const createUser = require('./db');
-const descripciones= require("./descripciones")
+const descripciones = require("./descripciones")
 
 
-fetch('https://randomuser.me/api/?results=100')
+fetch('https://randomuser.me/api/?results=15')
     .then(results => {
         return results.text()
     }).then(data => {
             data = JSON.parse(data);
 
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 15; i++) {
                 let id = i;
-                let pass=data.results[i].login.password;
+                let pass = data.results[i].login.password;
                 let name = `${data.results[i].name.first} ${data.results[i].name.last}`;
                 let genero = data.results[i].gender;
                 let email = data.results[i].email;
                 let age = data.results[i].dob.age;
-                let foto = data.results[i].picture.medium;
+                let foto = data.results[i].picture.large;
                 let descripcion = descripciones[i];
                 let arrLikes = [];
                 let arrDislike = [];
@@ -39,15 +39,15 @@ fetch('https://randomuser.me/api/?results=100')
                 };
                 let r;
                 for (let j = 0; j < 10; j++) {
-                     r = getRandom(0, 99);
+                    r = getRandom(0, 14);
                     if (data.results[r].gender === prefGen) {
                         arrLikes.push(data.results[r].email);
                     }
                 }
                 let t;
                 for (let j = 0; j < 10; j++) {
-                     t = getRandom(0, 99);
-                    if (data.results[t].gender === prefGen) {
+                    t = getRandom(0, 14);
+                    if (data.results[t].gender === prefGen && !arrLikes.includes(data.results[t].email)) {
                         arrDislike.push(data.results[t].email);
                     }
                 }
@@ -67,8 +67,43 @@ fetch('https://randomuser.me/api/?results=100')
                 } else {
                     gustos.push("Pan", "Chocololate")
                 }
-                createUser(name, genero, email,pass, age, descripcion, gustos, arrLikes, arrDislike, prefGen, foto)
-//id 
+                const arrLikes = [1, 2, 2, 3, 4, 4, 5];
+
+                const ALunicos = []
+
+                for (var i = 0; i < arrLikes.length; i++) {
+
+                    const elemento = arrLikes[i];
+
+                    if (!ALunicos.includes(arrLikes[i])) {
+
+                        ALunicos.push(elemento);
+
+                    }
+
+                }
+
+
+
+                const arrDislike = [1, 2, 2, 3, 4, 4, 5];
+
+                const ADunicos = []
+
+                for (var i = 0; i < arrDislike.length; i++) {
+
+                    const elemento = arrDislike[i];
+
+                    if (!ADunicos.includes(arrDislike[i])) {
+
+                        ADunicos.push(elemento);
+
+                    }
+
+                }
+
+
+
+                createUser(id, name, genero, email, pass, age, descripcion, gustos, ALunicos, ADunicos, prefGen, foto);
 
 
             }

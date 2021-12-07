@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
       this.registraUsuarioDDBB()
       alert('Te has registrado');
       localStorage.setItem('usuarioActual', emailFire);
-      window.location.href = './home';
+      window.location.href = './home/conocepersona';
     } catch (e: any) {
       alert(e.message);
     }

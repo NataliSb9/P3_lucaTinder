@@ -1,0 +1,6 @@
+@import '../../../styles/variables';
+
+.outlet-container{
+    min-height: 78.5vh;
+    background: linear-gradient(to right, $color-blue-indigo, $color-pink-dark)
+}

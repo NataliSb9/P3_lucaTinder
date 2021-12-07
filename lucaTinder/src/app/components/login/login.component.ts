@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
       localStorage.setItem('usuarioActual', user);
 
-      console.log(user);
+      //console.log(user);
       this.emailActual = user;
       // window.location.href = './usuario';
       this.usuarioService
@@ -35,8 +35,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('idusuarioActual', this.usuario._id);
         });
 
-      localStorage.setItem('usuarioActual', user);
-      window.location.href = './home';
+      window.location.href = './home/conocepersona';
     } catch (e: any) {
       // alert(e.message);
       // console.log(e.message);

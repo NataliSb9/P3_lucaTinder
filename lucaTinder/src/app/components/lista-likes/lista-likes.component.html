@@ -1,6 +1,11 @@
-<div class="likeContainer">
-<div *ngFor="let i of this.listaQueridos" class="cardDiv">
-<app-user-card [usuario]="i"> </app-user-card>
-</div>
-</div>
+<div class="centrator">
+  <div class="likeContainer container">
 
+    <div *ngFor="let i of this.listaQueridos" class="cardDiv">
+
+      <app-user-card [usuario]="i" [btnMostrador]="this.mostrador"> </app-user-card>
+
+
+    </div>
+  </div>
+</div>
