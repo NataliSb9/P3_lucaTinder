@@ -1,4 +1,5 @@
 @import "../../../styles/variables";
+
 .fondo-login {
   margin: 0;
   padding: 0;
@@ -90,6 +91,7 @@ form {
   position: relative;
   overflow: hidden;
   margin-bottom: 0.375em;
+
   /* Accessible outline */
   /* Remove comment to use */
   /*
@@ -100,7 +102,9 @@ form {
   .radio-input {
     position: absolute;
     left: -9999px;
-    &:checked + span {
+
+    &:checked+span {
+
       //background-color: mix(rgb(255, 0, 0), $color-blue-indigo, 84%);
       //color: white;
       &:before {
@@ -108,6 +112,7 @@ form {
       }
     }
   }
+
   .radio-span {
     display: flex;
     align-items: center;
@@ -115,9 +120,11 @@ form {
     border-radius: 99em; // or something higher...
     transition: 0.25s ease;
     color: $color-pink-light;
+
     &:hover {
       background-color: $color-blue-indigo;
     }
+
     &:before {
       display: flex;
       flex-shrink: 0;
@@ -149,28 +156,31 @@ form {
 
   .check-span {
     position: relative;
-    border: 1px solid #d4d4d4;
+    border: 3px solid $color-pink-dark;
     border-radius: 10px;
     transition: 0.4s;
     padding: 0 15px;
     height: 46px;
-    color: #e9e9e9;
+    color: $color-pink-dark;
     display: flex;
     align-items: center;
-    column-gap: 7px;
+    margin: 4px 8px 4px 8px;
 
     .icon {
       font-size: 1.1em;
     }
+
   }
 
   .check-input {
     pointer-events: none;
     display: none;
 
-    &:checked + span {
-      border-color: #f33d3d;
-      color: #f33d3d;
+    &:checked+span {
+      border: 3px dotted $color-pink-dark;
+
     }
+
   }
+
 }
