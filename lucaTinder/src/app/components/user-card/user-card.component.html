@@ -8,13 +8,13 @@
       </div>
       <div class="div-buttons">
         <div class="btn btn_like_div" id="btn_like_div" *ngIf="btnMostrador !== false" (click)="pulsaLikeDislike(false, usuario.email)" >
-          <a title="like_link" class= "btn-inner" id="like_link"><div class="btn_imagen_inner b_dislike" alt=""></div></a>
+          <a title="dislike_link" class= "btn-inner" id="like_link"><div class="btn_imagen_inner b_dislike" alt=""></div></a>
         </div>
         <div class="btn flip_front-div" (click)="toggleFlip()">
           <a title="flip_front" id="flip_front"><div class="btn_imagen_inner b_front" alt=""></div></a>
         </div>
         <div class="btn btn_dislike_div" id="btn_dislike_div" *ngIf="btnMostrador !== false" (click)="pulsaLikeDislike(true, usuario.email)">
-          <a  title="dislike_link" id="dislike_link"><div class="btn_imagen_inner b_like" alt=""></div></a>
+          <a  title="like_link" id="dislike_link"><div class="btn_imagen_inner b_like" alt=""></div></a>
         </div>
       </div>
   </div>
