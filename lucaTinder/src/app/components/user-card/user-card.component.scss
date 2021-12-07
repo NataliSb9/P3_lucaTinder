@@ -1,189 +1,306 @@
-$color-blue-indigo: #2e336a;
-$color-pink-light: #e91d62;
-$color-pink-dark: #c1165c;
+/*.tp-wrapper {
+    -webkit-perspective: 800px;
+            perspective: 800px;
+  }*/
 
-.card-container {
-  padding: 100px 0px;
-  -webkit-perspective: 1000;
-  perspective: 1000;
+@import '../../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&family=Rubik:wght@500;600;700&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Rubik', sans-serif;
 }
 
-.profile-card{
+.tp-box {
   position: relative;
+  width: 300px;
+  height: 450px;
+  margin: 20px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: transform 1s;
+  -ms-transform: transform 1s;
+  transform: transform 1s;
 }
 
-.sector_status {
+.tp-box__side {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 0px 30% 100% 0px;
-  background-color: $color-blue-indigo;
-  padding-left: 5px;
-  padding-bottom: 12px;
-  img{
-    height:28px;
-    width: 28px;
-    margin-top: 4px;
-    margin-left: 3px;
-    content: url("../../../assets/imgs/gratipay-brands-dp.svg");
-  }
-}
 
-.sector_status:hover{
-    background-color: $color-pink-dark;
-  img{
-    content: url("../../../assets/imgs/gratipay-brands.svg");
-  }
-}
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 
-.profile-card {
-  max-width: 300px;
-  border-radius: 5px;
-  box-shadow: #7e1b5d 5px 5px, $color-pink-light 10px 10px;
-  overflow: hidden;
-  position: relative;
-  margin: 10px auto;
+  color: $color-pink-dark;
+
   cursor: pointer;
-  margin:1vh 1vw 1vh 1vw;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.profile-card img {
-  transition: all 0.25s linear;
+.tp-box__front {
+  background: black;
+  border-radius: 8px;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
-.profile-card .profile-content {
-  border-left: 1px solid $color-pink-dark;
-  height: 110px;
-  position: relative;
-  padding: 15px 15px 5px 15px;
+.tp-box__back {
+  background: black;
+  border-radius: 8px;
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
-.profile-card .profile-name {
-  font-weight: bold;
-  position: absolute;
-  font-size: 1.5em !important;
-  text-shadow: 1px 1px 2px $color-pink-light;
-  left: 0px;
-  right: 0px;
-  top: -70px;
-  color: white;
-  font-size: 17px;
-}
+.tp-box__front {
+  .img-nombre-edad {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    height: 300px;
+    width: 300px;
+    border-radius: 8px 8px 0px 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 
-.profile-card .profile-name p {
-  margin-top: -4px;
-  font-weight: 600;
-  font-size: 0.5em;
-  letter-spacing: 1.5px;
-}
+    .name {
+      font-size: 2em;
+      text-shadow: 2px 2px $color-pink-dark;
+      margin: 0px 12px 6px 0px;
+      color: #fff;
+      position: relative
+    }
+  }
 
-.profile-card .profile-description {
-  color: $color-blue-indigo;
-  font-size: 0.9em;
-  padding: 10px;
-  font-weight: 700;
-}
+  .img-nombre-edad:before {
+    position: absolute;
+    border-radius: 8px 8px 0px 0px;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    ;
+  }
 
-#like_link{
-  height: 28px !important;
-  width: 28px !important;
-  content: url("../../../assets/imgs/heart-solid-dp.svg");
-  margin-left: -5px;
-  margin-bottom: -6px;
-}
+  .div-descripcion {
+    height: 100px;
+    width: 300px;
+    display: table;
+    border-top: 4px solid $color-pink-dark;
 
-#dislike_link{
-  height: 28px !important;
-  width: 28px !important;
-  content: url("../../../assets/imgs/heart-broken-solid-dp.svg");
-  margin-right: -5px;
-  margin-bottom: -6px;
-}
-
-#info_link{
-  margin-top: 5px;
-  height: 35px !important;
-  width: 35px !important;
-  content: url("../../../assets/imgs/eye-solid-dp.svg");
-}
-
-.profile-card .profile-content::before {
-  content: "";
-  position: absolute;
-  height: 25px;
-  top: -10px;
-  left: 0px;
-  right: 0px;
-  background-color: $color-blue-indigo;
-  z-index: 0;
-  border-bottom: 4px solid $color-pink-dark;
-  transform: skewY(3deg);
-}
-
-
-.reactions {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn_like_div {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 0px 100% 30% 0px;
-  background-color: $color-blue-indigo;
-}
-
-
-.btn_dislike_div {
-  background-color: $color-blue-indigo;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  border-radius: 100% 0px 0px 30%;
-}
-
-.btn_dislike_div:hover{
-  background-color: $color-pink-dark;
-  #dislike_link{
-    content: url("../../../assets/imgs/heart-broken-solid.svg");
+    .descripcion {
+      padding: 8px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 }
 
-.btn_like_div:hover{
-  background-color: $color-pink-dark;
-  #like_link{
-    content: url("../../../assets/imgs/heart-solid.svg");
+.tp-box__back {
+
+  .nombre-edad-sex {
+    height: 100px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+
+    .nombre-edad {
+      display: flex;
+      flex-direction: column;
+      margin: 2px;
+      margin-left: 8px;
+      margin-top: 16px;
+      align-content: center;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: nowrap;
+
+      .name {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .edad {
+        margin-top: -8px;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+
+    .sex {
+      height: 76px;
+      width: 76px;
+      margin: 12px 8px 12px 0px;
+      background: url(../../../assets/imgs/venus-mars-solid.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+
+  .cont-corr-tel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .logo-tlfn {
+    margin-top: -15px;
+    background: url(../../../assets/imgs/phone-square-alt-solid.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .logo-correo {
+    margin-top: -13px;
+    background: url(../../../assets/imgs/envelope-square-solid.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .back-logo {
+    height: 32px;
+    width: 32px;
+  }
+
+  .inner_h3 {
+    text-align: center;
+  }
+
+  .correo {
+    height: 65px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+
+  .telefono {
+    height: 65px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+
+  .gustos {
+    height: 170px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .gusto {
+      height: 30px;
+      border: 3px solid $color-pink-dark;
+      border-radius: 8px;
+      padding: 2px 10px 26px 10px;
+      margin-left: 4px;
+      margin-right: 4px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .gusto:hover {
+      border: 3px dotted $color-pink-dark;
+    }
   }
 }
 
-.btn-info_div {
-  background-color: $color-blue-indigo;
-  width: 10vw;
-  height: 4vh;
-  margin-top: 13px;
-  margin-left: 2vw;
-  border-radius: 40px 40px 3px 3px;
+.div-buttons {
+  height: 50px;
+  width: 300px;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-}
 
-.btn-info_div:hover {
-  background-color: $color-pink-dark;
-  display: flex;
-  #info_link{
-    content: url("../../../assets/imgs/eye-solid.svg");
+  .btn {
+    height: 64px;
+    width: 64px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: $color-pink-dark;
+    border: 4px solid black;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 }
 
+.btn:hover {
+  background-color: black !important;
+}
 
+.inner_h3 {
+  margin-left: 8px;
+}
+
+.btn_imagen_inner{
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  height:40px;
+  width:40px;
+}
+
+.b_back{
+  background:url(../../../assets/imgs/eye-slash-solid.svg);
+}
+.b_front{
+  background:url(../../../assets/imgs/eye-solid.svg);
+}
+.b_like{
+  background:url(../../../assets/imgs/heart-solid.svg);
+}
+.b_dislike{
+  background:url(../../../assets/imgs/heart-broken-solid.svg);
+}
+.b_chat{
+  background:url(../../../assets/imgs/comment-solid-w.svg);
+}
+
+
+.b_back:hover{
+  background:url(../../../assets/imgs/eye-slash-solid-dp.svg);
+}
+.b_front:hover{
+  background:url(../../../assets/imgs/eye-solid-dp.svg);
+}
+.b_like:hover{
+  background:url(../../../assets/imgs/heart-solid-dp.svg);
+}
+.b_dislike:hover{
+  background:url(../../../assets/imgs/heart-broken-solid-dp.svg);
+}
+.b_chat:hover{
+  background:url(../../../assets/imgs/comment-solid.svg);
+}

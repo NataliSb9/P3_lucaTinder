@@ -1,27 +1,51 @@
-<div class="profile-card text-center">
-  <div class="sector_status">
-    <a href="" title="dislike_link" id="like_status_link"><img class="icon-emogi-img" alt=""></a>
-  </div>
-  <img id="profile_img" src="{{usuario.foto}}" alt="" class="img img-responsive">
-  <div class="profile-content">
-    <div class="profile-name">{{usuario.name}}
-      <p>{{usuario.email}}  
-        
-      </p>
-    </div>
-    <div class="profile-description">{{usuario.descripcion}} </div>
-  </div>
-  <div class="reactions">
-    <div class="btn btn_like_div" id="btn_like_div" *ngIf="btnMostrador !== false">
-      <a href="" title="like_link" id="like_link"><img class="icon-emogi-img" alt=""></a>
-    </div>
-    <div class="btn-info_div">
-      <button (click)="redirectToInfo()"><a title="info_link" id="info_link"><img class="icon-emogi-img"
-            alt=""></a></button>
-    </div>
-    <div class="btn btn_dislike_div" id="btn_dislike_div" *ngIf="btnMostrador !== false">
-      <a href="" title="dislike_link" id="dislike_link"><img class="icon-emogi-img" alt=""></a>
-    </div>
+<!--*ngIf="btnMostrador !== false"-->
 
+<div class="tp-box" [@flipState]="flip">
+  <div class="tp-box__side tp-box__front">
+      <div class="img-nombre-edad" [ngStyle]="{'background-image': getUrl()}">
+        <h2 class="name">{{usuario.name}}</h2>
+      </div>
+      <div class="div-descripcion">
+        <h3 class="descripcion">{{usuario.descripcion}}</h3>
+      </div>
+      <div class="div-buttons">
+        <div class="btn btn_like_div" id="btn_like_div" *ngIf="btnMostrador !== false">
+          <a href="" title="like_link" class= "btn-inner" id="like_link"><div class="btn_imagen_inner b_dislike" alt=""></div></a>
+        </div>
+        <div class="btn flip_front-div" (click)="toggleFlip()">
+          <a title="flip_front" id="flip_front"><div class="btn_imagen_inner b_front" alt=""></div></a>
+        </div>
+        <div class="btn btn_dislike_div" id="btn_dislike_div" *ngIf="btnMostrador !== false">
+          <a href="" title="dislike_link" id="dislike_link"><div class="btn_imagen_inner b_like" alt=""></div></a>
+        </div>
+      </div>
+  </div>
+  <div class="tp-box__side tp-box__back">
+    <div class="nombre-edad-sex">
+      <div class="nombre-edad">
+        <h2 class="name">{{usuario.name}}</h2>
+      <h3 class="edad">Edad {{usuario.age}}</h3>
+      </div>
+      <div class="sex"></div>    
+    </div>
+    <div class="correo cont-corr-tel">
+      <div class="back-logo logo-correo"></div>
+      <h3 class="inner_h3">{{usuario.email}}</h3>
+    </div>
+    <div class="telefono cont-corr-tel">
+      <div class="back-logo logo-tlfn"></div>
+      <h3 class="inner_h3">+34658972112</h3>
+    </div>
+    <div class=gustos>
+      <h4 class="gusto" *ngFor="let gusto of this.usuario.gustos">{{gusto}}</h4>
+    </div>
+    <div class="div-buttons">
+      <div class="btn flip_back_div" (click)="toggleFlip()">
+        <a title="flip_back" class="flip_back_link" id="flip_back_link"><div class="btn_imagen_inner b_back" alt=""></div></a>
+      </div>
+      <div class="btn btn_chat_div" id="btn_chat_div">
+        <a href="" title="chat" class="chat_btn_link" class="chat_btn_link"><div class="btn_imagen_inner b_chat" alt=""></div></a>
+      </div>
+    </div>
   </div>
 </div>

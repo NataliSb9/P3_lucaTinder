@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
   async login(user: string, pass: string) {
     try {
       await this.auth.login(user, pass);
-      // alert('Has Entrado');
+      
+      
+      
       localStorage.setItem('usuarioActual', user);
       window.location.href = './home';
     } catch (e: any) {

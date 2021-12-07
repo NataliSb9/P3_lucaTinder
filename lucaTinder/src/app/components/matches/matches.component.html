@@ -1,1 +1,12 @@
-<p>matches works!</p>
+<div class="centrator">
+    <div class="likeContainer">
+  
+      <div *ngFor="let i of this.listaMatches" class="cardDiv">
+  
+        <app-user-card [usuario]="i" [btnMostrador]="this.mostrador"> </app-user-card>
+  
+  
+      </div>
+    </div>
+  </div>
+  
