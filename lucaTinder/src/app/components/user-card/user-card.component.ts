@@ -22,9 +22,9 @@ export class UserCardComponent implements OnInit {
   myEmail: any = window.localStorage.getItem('usuarioActual');
   checkIfIsLike: boolean = true;
 
-  pulsaLikeDislike(checkIfIsLike: boolean) {
+  pulsaLikeDislike(checkIfIsLike: boolean, emailLikeDislike: string) {
     let myUsuario: UsuarioMatch = new UsuarioMatch(
-      this.email,
+      this.email = emailLikeDislike,
       this.myEmail,
       checkIfIsLike
     );
