@@ -4,8 +4,7 @@ $color-pink-dark: #c1165c;
 
 
 .header-component {
-
-  color: $color-blue-indigo;
+  color: $color-pink-light;
   font-weight: 700;
 
     .h1-img{
@@ -15,8 +14,8 @@ $color-pink-dark: #c1165c;
     }
 
   h1 {
-    padding-top: 20px;
-    color: $color-blue-indigo;
+    padding-top: 40px !important;
+    color: $color-pink-light;
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 700;
@@ -39,8 +38,8 @@ $color-pink-dark: #c1165c;
   }
 
   header {
-    background-color: white;
-    box-shadow: 0 0 5px $color-blue-indigo;
+    background-color: black;
+    box-shadow: 0 0 5px $color-pink-light;
   }
 
   h1 {
@@ -71,7 +70,7 @@ $color-pink-dark: #c1165c;
     right: 0;
     height: 4px;
     transform: scaleX(0);
-    background: $color-blue-indigo;
+    background: $color-pink-light;
     transition: 0.7s transform cubic-bezier(0.06, 0.9, 0.28, 1);
   }
 
