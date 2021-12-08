@@ -36,8 +36,11 @@ export class UserCardComponent implements OnInit {
   @Input() usuario: any;
   @Input() btnMostrador: any;
   public usuarioExportable!: any;
-  constructor(private usuarioService: UsuarioService) {}
-
+  public hidden!:boolean;
+  constructor(private usuarioService: UsuarioService) {
+    this.hidden = true;
+  }
+   
   // redirectToInfo(){
   //   window.location.href = './home/profileInfo/infoDeployed';
   //localStorage.setItem('perfilVisitable', this.usuario.email);
@@ -73,6 +76,7 @@ export class UserCardComponent implements OnInit {
 
     // Ayudante para Test
     this.checkIfIsLike = checkIfIsLike;
+    this.hidden =false;
   }
 
   getUrlSex() {

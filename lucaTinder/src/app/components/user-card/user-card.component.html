@@ -1,4 +1,4 @@
-<div class="tp-box" [@flipState]="flip">
+<div *ngIf = "hidden" class="tp-box" [@flipState]="flip" >
   <div class="tp-box__side tp-box__front">
       <div class="img-nombre-edad" [ngStyle]="{'background-image': getUrl()}">
         <h2 class="name">{{usuario.name}}</h2>
